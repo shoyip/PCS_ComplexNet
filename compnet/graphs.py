@@ -106,7 +106,7 @@ class ConfigModelGraph:
         components.append(visited_c)
     return components
 
-  def find_giant_component(self):
+  def get_giantcomponentsize(self):
     if self.edges == None:
       raise ValueError("A graph must first be generated.")
     components = self.find_components()
