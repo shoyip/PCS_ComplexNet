@@ -93,20 +93,12 @@ class ConfigModelGraph:
           break
         # visit the last nonvisited_c
         current_node = nonvisited_c[-1]
-        # which edges contain the current node?
-        current_edges_mask = np.sum(edges_arr == current_node, axis=1)
-        # select only index of edges who contain the current node
-        current_edges_index = current_edges_mask.nonzero()[0]
-        # select only the edges who contain the current node
-        current_edges = edges_arr[current_edges_index]
-        # get only the neighbouring nodes by removing the current node
-        # to the 1D list of nodes
-        current_neighb = set(np.setdiff1d(current_edges, current_node))
-        current_new_neighb = current_neighb - visited_c
+        current_neighbours = self.neighbourhoods[current_node]
+        current_new_neighbours = current_neighbours - visited_c
         # remove the current node from the nonvisited and add it to visited
         visited_c.add(nonvisited_c.pop(-1))
         # now add the neighbours to the nonvisited
-        nonvisited_c += current_new_neighb
+        nonvisited_c += current_new_neighbours
       if success_c == 0:
         continue
       else:
