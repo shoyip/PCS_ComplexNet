@@ -69,3 +69,30 @@ def get_theo_gcomp_size(x, n_vertices):
     TODO
     """
     return (1 - (1-x) * (1-np.sqrt(x)) / (2*np.sqrt(x)) - x * ((1 - np.sqrt(x))/(2*np.sqrt(x)))**4) * n_vertices
+
+
+def threecore_step(t, pvec):
+  """
+  Function that represents the RHS of the ODE
+
+    dp(t) / dt = f( p(t) )
+
+  :param t: Decimal time where 0 is the starting time and 1 is the final time
+  :param pvec: Vector to be transformed
+  :returns: Transformed vector
+  """
+  def A_aux(pvec):
+    return 1 / (pvec[0] + pvec[1] + pvec[2])
+
+  def B_aux(pvec):
+    return (pvec[1] + 2*pvec[2]) * A_aux(pvec) / (pvec[1] + 2*pvec[2] + 3*pvec[3] + 4*pvec[4])
+
+  M = 1. / (1. - t) * np.array([
+      [1 - A_aux(pvec), B_aux(pvec), 0, 0, 0],
+      [0, 1 - A_aux(pvec) - B_aux(pvec), 2*B_aux(pvec), 0, 0],
+      [0, 0, 1 - A_aux(pvec) - 2*B_aux(pvec), 3*B_aux(pvec), 0],
+      [0, 0, 0, 1 - 3*B_aux(pvec), 4*B_aux(pvec)],
+      [0, 0, 0, 0, 1 - 4*B_aux(pvec)]
+  ])
+
+  return M.dot(pvec)
