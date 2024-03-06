@@ -1,3 +1,21 @@
+"""
+PROBLEM 1: GENERATION OF INSTANCES OF THE RANDOM GRAPH MODEL
+
+This is the code that shows how we can use the implementation in compnet in
+order to generate random instances of the configuration model, in particular in
+the case of a given degree distribution with parametrized degree probabilities.
+
+Differently from the general configuration model algorithm, this algorithm
+discards self-edges and multiple edges between two nodes.
+
+As shown in the code, instances of the graph are stored in the form of lists of
+edges (two-values arrays), which is a manner of storing graphs in a more
+efficient manner with respect to, say, adjacency matrices.
+
+Another form we can choose to represent the data in, is the form of a dictionary
+that contains for each node its neighbourhood.
+"""
+
 from compnet.graphs import ConfigModelDegreeGraph
 
 # we define a dictionary containing the degree distribution
