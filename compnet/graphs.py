@@ -1,3 +1,6 @@
+from collections import defaultdict
+import numpy as np
+
 class ConfigModelGraph:
   """
   Instances of graphs generated with the configuration model given a certain
