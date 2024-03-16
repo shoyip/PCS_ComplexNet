@@ -1,6 +1,3 @@
-from collections import defaultdict
-import numpy as np
-
 class ConfigModelGraph:
   """
   Instances of graphs generated with the configuration model given a certain
@@ -55,16 +52,15 @@ class ConfigModelGraph:
         success = 1
         break
       # find the indices and values of a candidate tuple of nodes
-      trial_values = self.rng.choice(a=current_stubs,
-                                     size=2)
+      trial_values = set(self.rng.choice(a=current_stubs,
+                                     size=2))
       # if we have exhausted the stub set, exit the loop
       # if they are the same nodes, refuse the move
       # if they are already in the edge set, refuse the move
       # if none of these occur, add the candidate to the edge set
-      if (trial_values[0] == trial_values[1]):
+      if (len(trial_values)==1):
         continue
-      elif ((id(trial_values) in map(id, current_edges)) |
-            (id(np.flip(trial_values)) in map(id, current_edges))):
+      elif (trial_values in current_edges):
         continue
       else:
         current_edges.append(trial_values)
@@ -73,7 +69,10 @@ class ConfigModelGraph:
       raise ValueError("Graph not found.")
     self.edges = current_edges
 
-  def find_components(self):
+  def get_components(self):
+    """
+    Get the components of the current graph instance.
+    """
     if self.edges == None:
       raise ValueError("A graph must first be generated.")
     # transform the edge list in an edge array
@@ -110,9 +109,12 @@ class ConfigModelGraph:
     return components
 
   def get_giantcomponentsize(self):
+    """
+    Get the size of the giant component for the current graph instance.
+    """
     if self.edges == None:
       raise ValueError("A graph must first be generated.")
-    components = self.find_components()
+    components = self.get_components()
     component_sizes = [len(component) for component in components]
     max_component_size = max(component_sizes)
     return max_component_size
@@ -120,7 +122,7 @@ class ConfigModelGraph:
   def find_neighbourhoods(self):
     """
     Given a graph return the dictionary of neighbours for each vertex.
-    Returns a dictionary of sets.
+    Stores a dictionary of sets.
     """
     neighbourhoods = defaultdict(set)
     for edge in self.edges:
@@ -128,7 +130,7 @@ class ConfigModelGraph:
       neighbourhoods[edge[1]].add(edge[0])
     self.neighbourhoods = dict(neighbourhoods)
 
-  def find_degrees(self, neighbourhoods):
+  def get_degrees(self, neighbourhoods):
     """
     Given a neighbourhood dictionary, compute the degree for each vertex.
     """
@@ -136,12 +138,15 @@ class ConfigModelGraph:
     return degrees
 
   def get_biggest_qcoresize(self, q):
+    """
+    Get the size of the biggest qcore for the current graph instance.
+    """
     current_neighbourhoods = self.neighbourhoods.copy()
     # fictitious values to initialize the iteration
     current_qcoresize = 1
     previous_qcoresize = 0
     while (current_qcoresize > previous_qcoresize):
-      current_degrees = self.find_degrees(current_neighbourhoods)
+      current_degrees = self.get_degrees(current_neighbourhoods)
       previous_qcoresize = len(current_neighbourhoods)
       current_neighbourhoods = {k: v
       				for k, v
@@ -149,6 +154,27 @@ class ConfigModelGraph:
       				if current_degrees[k] >= q}
       current_qcoresize = len(current_neighbourhoods)
     return current_qcoresize
+
+  def generate_spins(self):
+    """
+    Generate a random configuration of spin values.
+    """
+    self.spins = np.random.randint(low=0, high=2, size=self.N) * 2 - 1
+
+  def find_spin_neighbourhoods(self):
+    """
+    Find and store the neighbourhood spin values of each spin.
+    """
+    self.spin_neighbourhoods = {k: [self.spins[e] for e in v] for k, v in self.neighbourhoods.items()}
+  
+  def find_adjacency(self):
+    """
+    Find and store the adjacency matrix.
+    """
+    adj = np.zeros(shape=(self.N, self.N))
+    for i, j in self.edges:
+      adj[i, j] = 1.
+    self.adjacency = adj + adj.T
 
 class ConfigModelDegreeGraph(ConfigModelGraph):
   def __init__(self, N, degree_dict, allow_isolated=False,
