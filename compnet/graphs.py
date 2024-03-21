@@ -1,3 +1,6 @@
+import numpy as np
+from collections import defaultdict
+
 class ConfigModelGraph:
   """
   Instances of graphs generated with the configuration model given a certain
@@ -47,26 +50,31 @@ class ConfigModelGraph:
     current_stubs = self.stubs.copy()
     current_edges = []
     success = 0
-    for i in range(max_iter):
-      if (len(current_stubs) == 0):
-        success = 1
-        break
-      # find the indices and values of a candidate tuple of nodes
-      trial_values = set(self.rng.choice(a=current_stubs,
-                                     size=2))
-      # if we have exhausted the stub set, exit the loop
-      # if they are the same nodes, refuse the move
-      # if they are already in the edge set, refuse the move
-      # if none of these occur, add the candidate to the edge set
-      if (len(trial_values)==1):
-        continue
-      elif (trial_values in current_edges):
-        continue
-      else:
-        current_edges.append(trial_values)
-        for e in trial_values: current_stubs.remove(e)
-    if (success == 0):
-      raise ValueError("Graph not found.")
+    # repeat until we find a graph
+    trial=0
+    while success == 0:
+      print(f'trial {trial}')
+      trial+=1
+      for i in range(max_iter):
+        if (len(current_stubs) == 0):
+          success = 1
+          break
+        # find the indices and values of a candidate tuple of nodes
+        trial_values = set(self.rng.choice(a=current_stubs,
+                                      size=2))
+        # if we have exhausted the stub set, exit the loop
+        # if they are the same nodes, refuse the move
+        # if they are already in the edge set, refuse the move
+        # if none of these occur, add the candidate to the edge set
+        if (len(trial_values)==1):
+          continue
+        elif (trial_values in current_edges):
+          continue
+        else:
+          current_edges.append(trial_values)
+          for e in trial_values: current_stubs.remove(e)
+    # if (success == 0):
+    #   raise ValueError("Graph not found.")
     self.edges = current_edges
 
   def get_components(self):
@@ -126,6 +134,7 @@ class ConfigModelGraph:
     """
     neighbourhoods = defaultdict(set)
     for edge in self.edges:
+      edge = list(edge)
       neighbourhoods[edge[0]].add(edge[1])
       neighbourhoods[edge[1]].add(edge[0])
     self.neighbourhoods = dict(neighbourhoods)

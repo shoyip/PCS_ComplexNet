@@ -39,12 +39,3 @@ G.find_neighbourhoods()
 
 print("\nGraphs can be stored also as a dictionary of neighbourhoods.")
 print(G.neighbourhoods)
-
-# let us generate some graphs for visualization purposes
-N = 100
-for pi in [0.2, 0.6, 0.9]:
-    degree_dict = {1: 1-pi, 4: pi}
-    G = ConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
-    G.generate_graph()
-    edges = np.array(G.edges)
-    np.savetxt(f'assets/edges{pi:.1f}.csv', edges, delimiter=';')
