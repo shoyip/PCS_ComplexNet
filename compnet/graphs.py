@@ -47,14 +47,13 @@ class ConfigModelGraph:
     neither multiple edges nor are self-edges.
     """
     self.stubs = self.generate_stubs()
-    current_stubs = self.stubs.copy()
-    current_edges = []
     success = 0
     # repeat until we find a graph
-    trial=0
+    trial = 0
     while success == 0:
-      print(f'trial {trial}')
-      trial+=1
+      trial += 1
+      current_edges = []
+      current_stubs = self.stubs.copy()
       for i in range(max_iter):
         if (len(current_stubs) == 0):
           success = 1
@@ -73,8 +72,6 @@ class ConfigModelGraph:
         else:
           current_edges.append(trial_values)
           for e in trial_values: current_stubs.remove(e)
-    # if (success == 0):
-    #   raise ValueError("Graph not found.")
     self.edges = current_edges
 
   def get_components(self):
