@@ -18,24 +18,33 @@ that contains for each node its neighbourhood.
 
 from compnet.graphs import ConfigModelDegreeGraph
 import numpy as np
+import matplotlib.pyplot as plt
+import networkx as nx
 
-# we define a dictionary containing the degree distribution
-pi = 0.3
-degree_dict = {1: 1-pi, 4: pi}
-
-# we define the graph object with N vertices and the given
-# degree distribution
-N = 20
-G = ConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
-
-# sample a graph instance
-G.generate_graph()
-
-print("Graphs are stored as a list of edges.")
-print(G.edges)
-
-# find the neighbourhoods dictionary
-G.find_neighbourhoods()
-
-print("\nGraphs can be stored also as a dictionary of neighbourhoods.")
-print(G.neighbourhoods)
+for idx, pi in enumerate([0.1, 0.3, 0.7]):
+    # we define a dictionary containing the degree distribution
+    degree_dict = {1: 1-pi, 4: pi}
+    
+    # we define the graph object with N vertices and the given
+    # degree distribution
+    N = 200
+    G = ConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
+    
+    # sample a graph instance
+    G.generate_graph()
+    
+    print("Graphs are stored as a list of edges.")
+    print(G.edges)
+    
+    # find the neighbourhoods dictionary
+    G.find_neighbourhoods()
+    
+    # import graph to networkx
+    Gnx = nx.from_edgelist(G.edges)
+    
+    # draw random graph
+    fig, ax = plt.subplots()
+    nx.draw(Gnx, node_size=10, ax=ax)
+    plt.close()
+    
+    fig.savefig(f'assets/rg{idx}.pdf', bbox_inches='tight')
