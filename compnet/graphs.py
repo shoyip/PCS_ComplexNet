@@ -124,6 +124,14 @@ class ConfigModelGraph:
     max_component_size = max(component_sizes)
     return max_component_size
 
+  def edges_to_neighbourhoods(self, edges):
+    neighbourhoods = defaultdict(set)
+    for edge in edges:
+      edge = list(edge)
+      neighbourhoods[edge[0]].add(edge[1])
+      neighbourhoods[edge[1]].add(edge[0])
+    return neighbourhoods
+
   def find_neighbourhoods(self):
     """
     Given a graph return the dictionary of neighbours for each vertex.
@@ -147,19 +155,32 @@ class ConfigModelGraph:
     """
     Get the size of the biggest qcore for the current graph instance.
     """
-    current_neighbourhoods = self.neighbourhoods.copy()
-    # fictitious values to initialize the iteration
-    current_qcoresize = 1
-    previous_qcoresize = 0
-    while (current_qcoresize > previous_qcoresize):
-      current_degrees = self.get_degrees(current_neighbourhoods)
-      previous_qcoresize = len(current_neighbourhoods)
-      current_neighbourhoods = {k: v
-      				for k, v
-      				in current_neighbourhoods.items()
-      				if current_degrees[k] >= q}
-      current_qcoresize = len(current_neighbourhoods)
-    return current_qcoresize
+    current_edges = self.edges.copy()
+    for iteration in range(10_000):
+      nodes_to_be_deleted = set()
+      current_neighbourhoods = self.edges_to_neighbourhoods(current_edges)
+      for node, neighbourhood in current_neighbourhoods.items():
+        # evaluate size of neighbourhood
+        if len(neighbourhood) < q:
+          nodes_to_be_deleted.add(node)
+
+      # cycle through edges and delete the ones that are in the death note
+      new_edges = []
+      for edge in current_edges:
+        keep_edge = len(edge.intersection(nodes_to_be_deleted))
+        if keep_edge == 0: new_edges.append(edge)
+
+      if len(current_edges) == 0:
+        qcoresize = 0.
+        break
+      elif current_edges == new_edges:
+        current_nodes = set.union(*current_edges)
+        qcoresize = len(current_nodes)
+        break
+
+      current_edges = new_edges
+
+    return qcoresize
 
   def generate_spins(self):
     """
