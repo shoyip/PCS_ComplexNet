@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  23 MAR 2024 08:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  23 MAR 2024 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -663,6 +663,11 @@ Package: amsthm 2020/05/29 v2.20.6
 \beamer@dimb=\dimen293
 )
 (/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/usr/share/texmf-dist/tex/latex/beamer/beamerthemeCopenhagen.sty
+(/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
+(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty))
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
@@ -671,24 +676,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./pcs_complexnet_slides.aux)
 \openout1 = `pcs_complexnet_slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -746,54 +751,54 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 12.
 
 (./pcs_complexnet_slides.out) (./pcs_complexnet_slides.out)
 \@outlinefile=\write5
 \openout5 = `pcs_complexnet_slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 8.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 12.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 8.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 8.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 12.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 8.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 8.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 12.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 8.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 8.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 8.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 12.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 12.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 12.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 8.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 8.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 8.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 8.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 12.
 
 (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English
 .dict
@@ -818,19 +823,89 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texmf-dist/tex/latex/translator/translator-theorem-dictionary-Engli
 sh.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./pcs_complexnet_slides.nav) [1
+) (./pcs_complexnet_slides.nav) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
+x.map}
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+] [2
+
+] [3
 
 ]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [4
+
+]
+<../assets//rg0.pdf, id=57, 372.9132pt x 281.56392pt>
+File: ../assets//rg0.pdf Graphic file (type pdf)
+<use ../assets//rg0.pdf>
+Package pdftex.def Info: ../assets//rg0.pdf  used on input line 44.
+(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
+ [5
+
+ <../assets//rg0.pdf>]
+<../assets//rg1.pdf, id=68, 372.9132pt x 281.56392pt>
+File: ../assets//rg1.pdf Graphic file (type pdf)
+<use ../assets//rg1.pdf>
+Package pdftex.def Info: ../assets//rg1.pdf  used on input line 53.
+(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
+[6
+
+ <../assets//rg1.pdf>]
+<../assets//rg2.pdf, id=79, 372.9132pt x 281.56392pt>
+File: ../assets//rg2.pdf Graphic file (type pdf)
+<use ../assets//rg2.pdf>
+Package pdftex.def Info: ../assets//rg2.pdf  used on input line 62.
+(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
+ [7
+
+ <../assets//rg2.pdf>]
+<../assets//gcs.pdf, id=90, 419.72339pt x 327.20317pt>
+File: ../assets//gcs.pdf Graphic file (type pdf)
+<use ../assets//gcs.pdf>
+Package pdftex.def Info: ../assets//gcs.pdf  used on input line 74.
+(pdftex.def)             Requested size: 222.79817pt x 173.6786pt.
+
+Overfull \vbox (4.91907pt too high) detected at line 74
+ []
+
+[8
+
+ <../assets//gcs.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `math shift' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `math shift' on input line 76.
 
+<../assets//qcore.pdf, id=143, 395.90533pt x 298.29831pt>
+File: ../assets//qcore.pdf Graphic file (type pdf)
+<use ../assets//qcore.pdf>
+Package pdftex.def Info: ../assets//qcore.pdf  used on input line 86.
+(pdftex.def)             Requested size: 230.50723pt x 173.6786pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:gcs}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.86 \end{frame}
+                
+Overfull \vbox (2.97462pt too high) detected at line 86
+ []
+
+[9
+
+ <../assets//qcore.pdf>]
 \tf@nav=\write6
 \openout6 = `pcs_complexnet_slides.nav'.
 
@@ -840,31 +915,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@snm=\write8
 \openout8 = `pcs_complexnet_slides.snm'.
 
-(./pcs_complexnet_slides.aux)
+ (./pcs_complexnet_slides.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 
 Package rerunfilecheck Warning: File `pcs_complexnet_slides.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `pcs_complexnet_slides.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  3A1D21DCCF252349EED366DC69C6CC3B;258.
+(rerunfilecheck)             Before: 3A1D21DCCF252349EED366DC69C6CC3B;258
+(rerunfilecheck)             After:  ECA43BF6981B0B38CE97C52C37327D64;551.
  ) 
 Here is how much of TeX's memory you used:
- 21189 strings out of 477985
- 407283 string characters out of 5840059
- 1854388 words of memory out of 5000000
- 40978 multiletter control sequences out of 15000+600000
- 514099 words of font info for 38 fonts, out of 8000000 for 9000
+ 21679 strings out of 477985
+ 421180 string characters out of 5840059
+ 1859388 words of memory out of 5000000
+ 41412 multiletter control sequences out of 15000+600000
+ 522567 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,11n,104p,396b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on pcs_complexnet_slides.pdf (2 pages, 31711 bytes).
+ 101i,19n,104p,396b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on pcs_complexnet_slides.pdf (9 pages, 113833 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 223 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 

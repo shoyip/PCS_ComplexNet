@@ -1,1 +1,3 @@
 \beamer@sectionintoc {1}{Random graphs of the configuration model}{2}{0}{1}
+\beamer@sectionintoc {2}{The giant component}{8}{0}{2}
+\beamer@sectionintoc {3}{Emergence of $q$-cores}{9}{0}{3}
