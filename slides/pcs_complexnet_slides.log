@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  23 MAR 2024 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  23 MAR 2024 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,7 +673,11 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box76
 )
-(./pcs_complexnet_slides.aux)
+(./pcs_complexnet_slides.aux
+
+LaTeX Warning: Label `fig:gcs' multiply defined.
+
+)
 \openout1 = `pcs_complexnet_slides.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -823,58 +827,58 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texmf-dist/tex/latex/translator/translator-theorem-dictionary-Engli
 sh.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./pcs_complexnet_slides.nav) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
-x.map}
+) (./pcs_complexnet_slides.nav)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2
 
 ] [3
 
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
-
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
-
-
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
+] [4
 
 ]
-<../assets//rg0.pdf, id=57, 372.9132pt x 281.56392pt>
+<../assets//rg0.pdf, id=77, 372.9132pt x 281.56392pt>
 File: ../assets//rg0.pdf Graphic file (type pdf)
 <use ../assets//rg0.pdf>
 Package pdftex.def Info: ../assets//rg0.pdf  used on input line 44.
-(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
+(pdftex.def)             Requested size: 217.97409pt x 164.57869pt.
  [5
 
  <../assets//rg0.pdf>]
-<../assets//rg1.pdf, id=68, 372.9132pt x 281.56392pt>
+<../assets//rg1.pdf, id=90, 372.9132pt x 281.56392pt>
 File: ../assets//rg1.pdf Graphic file (type pdf)
 <use ../assets//rg1.pdf>
 Package pdftex.def Info: ../assets//rg1.pdf  used on input line 53.
-(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
-[6
+(pdftex.def)             Requested size: 217.97409pt x 164.57869pt.
+ [6
 
  <../assets//rg1.pdf>]
-<../assets//rg2.pdf, id=79, 372.9132pt x 281.56392pt>
+<../assets//rg2.pdf, id=103, 372.9132pt x 281.56392pt>
 File: ../assets//rg2.pdf Graphic file (type pdf)
 <use ../assets//rg2.pdf>
 Package pdftex.def Info: ../assets//rg2.pdf  used on input line 62.
-(pdftex.def)             Requested size: 230.02591pt x 173.6786pt.
+(pdftex.def)             Requested size: 217.97409pt x 164.57869pt.
  [7
 
  <../assets//rg2.pdf>]
-<../assets//gcs.pdf, id=90, 419.72339pt x 327.20317pt>
+<../assets//gcs.pdf, id=117, 409.62848pt x 327.20317pt>
 File: ../assets//gcs.pdf Graphic file (type pdf)
 <use ../assets//gcs.pdf>
 Package pdftex.def Info: ../assets//gcs.pdf  used on input line 74.
-(pdftex.def)             Requested size: 222.79817pt x 173.6786pt.
+(pdftex.def)             Requested size: 206.04506pt x 164.57869pt.
 
-Overfull \vbox (4.91907pt too high) detected at line 74
+Overfull \vbox (8.81909pt too high) detected at line 74
  []
 
 [8
@@ -888,11 +892,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 76.
 
-<../assets//qcore.pdf, id=143, 395.90533pt x 298.29831pt>
+<../assets//qcore.pdf, id=173, 409.62848pt x 327.20317pt>
 File: ../assets//qcore.pdf Graphic file (type pdf)
 <use ../assets//qcore.pdf>
 Package pdftex.def Info: ../assets//qcore.pdf  used on input line 86.
-(pdftex.def)             Requested size: 230.50723pt x 173.6786pt.
+(pdftex.def)             Requested size: 206.04506pt x 164.57869pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:gcs}) has
  been already used, duplicate ignored
@@ -900,7 +904,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{fig:gcs}) has
                    \relax 
 l.86 \end{frame}
                 
-Overfull \vbox (2.97462pt too high) detected at line 86
+Overfull \vbox (6.87465pt too high) detected at line 86
  []
 
 [9
@@ -917,34 +921,29 @@ Overfull \vbox (2.97462pt too high) detected at line 86
 
  (./pcs_complexnet_slides.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `pcs_complexnet_slides.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pcs_complexnet_slides.out':
-(rerunfilecheck)             Before: 3A1D21DCCF252349EED366DC69C6CC3B;258
-(rerunfilecheck)             After:  ECA43BF6981B0B38CE97C52C37327D64;551.
+Package rerunfilecheck Info: File `pcs_complexnet_slides.out' has not changed.
+(rerunfilecheck)             Checksum: ECA43BF6981B0B38CE97C52C37327D64;551.
  ) 
 Here is how much of TeX's memory you used:
- 21679 strings out of 477985
- 421180 string characters out of 5840059
- 1859388 words of memory out of 5000000
- 41412 multiletter control sequences out of 15000+600000
+ 21691 strings out of 477985
+ 421284 string characters out of 5840059
+ 1860388 words of memory out of 5000000
+ 41424 multiletter control sequences out of 15000+600000
  522567 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,19n,104p,396b,562s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,22n,104p,396b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on pcs_complexnet_slides.pdf (9 pages, 113833 bytes).
+mssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on pcs_complexnet_slides.pdf (9 pages, 128246 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 267 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  26 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

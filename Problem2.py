@@ -18,14 +18,19 @@ given by
 
 """
 
+import time
 from compnet.graphs import ConfigModelDegreeGraph
 import numpy as np
 import matplotlib.pyplot as plt
 
+start = time.time()
+
 # PART A: GENERATE INSTANCES AND MEASURE THE GIANT COMPONENT
 
+n_samples = 20
+
 # we pick equally spaced values of pi from 0.01 to 0.99
-pi_values = np.linspace(0.01, 0.99, 15)
+pi_values = np.linspace(0.01, 0.99, 25)
 
 # we define the lists of means and standard deviations of giant component sizes
 gcs_means, gcs_stds = [], []
@@ -47,7 +52,7 @@ for pi in pi_values:
     gcs_samples = []
 
     # for each value of pi, we sample 20 instances
-    for inst in range(20):
+    for inst in range(n_samples):
 
         # generate a graph instance and get the neighbourhoods
         G.generate_graph()
@@ -63,7 +68,7 @@ for pi in pi_values:
     gcs_means.append(np.mean(gcs_samples))
 
     # compute the standard deviation of the giant component sizes
-    gcs_stds.append(np.std(gcs_samples) / np.sqrt(20))
+    gcs_stds.append(np.std(gcs_samples) / np.sqrt(n_samples))
 
 # PART B: GENERATING THE PLOT FOR THE ANALYTICAL COMPUTATION OF THE
 # GIANT COMPONENT SIZE
@@ -102,14 +107,18 @@ analytic_gamma = np.vectorize(gamma_func)(analytic_pi)
 # generate the figure
 fig = plt.figure()
 plt.errorbar(pi_values, gcs_means, yerr=gcs_stds, fmt='.',
-    label='GCS from random samples')
+    label='GCS for $N=1000$ instances')
 plt.plot(analytic_pi, analytic_gamma, label=r'$\gamma$ function')
 plt.grid()
 plt.legend()
-plt.title('Behaviour of Giant Component Size in the configuration model')
+plt.title('Behaviour of GCS in the configuration model')
 plt.xlabel(r'$\pi$')
-plt.ylabel(r'Giant Component Size')
+plt.ylabel(r'Relative giant component size')
 plt.close()
 
 # saving the figure
 fig.savefig('assets/gcs.pdf', bbox_inches='tight')
+
+stop = time.time()
+
+print(f"Time elapsed: {(stop - start) / 60} mins")

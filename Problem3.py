@@ -11,7 +11,7 @@ import time
 
 start = time.time()
 
-pi_values = np.linspace(0.01, 0.99, 15)
+pi_values = np.linspace(0.01, 0.99, 25)
 
 N = 1000
 
@@ -46,13 +46,14 @@ for pi in pi_values:
     qcoresize_stds.append(np.std(qcoresizes) / np.sqrt(n_samples))
 
 def get_threecoresize(pi):
+    n_vertices = 10_000
     threecoresize, _ = get_theo_qcore_size(
-        n_vertices = 10_000,
+        n_vertices = n_vertices,
         degree_distribution = [0, 1-pi, 0, 0, pi],
         q = 3,
         function=threecore_step
     )
-    return threecoresize / 10_000
+    return threecoresize / n_vertices
 
 # computing theoretical values
 
@@ -66,7 +67,7 @@ get_threecoresize_vect = np.vectorize(get_threecoresize)
 #         q=3,
 #         function=threecore_step)
 
-theo_pi_values = np.linspace(0.1, 0.99, 40)
+theo_pi_values = np.linspace(0.1, 0.99, 50)
 
 theo_qcoresizes = get_threecoresize_vect(theo_pi_values)
 
@@ -77,6 +78,9 @@ plt.errorbar(x=pi_values, y=qcoresize_means,
 plt.plot(theo_pi_values,
          theo_qcoresizes,
          label='Theoretical $q$-core sizes')
+plt.xlabel(r'$\pi$')
+plt.ylabel(r'Relative size of 3-core')
+plt.title(r'Behaviour of 3-core size in the configuration model')
 plt.grid()
 plt.legend()
 plt.close()
