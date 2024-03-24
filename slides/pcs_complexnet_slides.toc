@@ -1,3 +1,6 @@
 \beamer@sectionintoc {1}{Random graphs of the configuration model}{2}{0}{1}
-\beamer@sectionintoc {2}{The giant component}{8}{0}{2}
-\beamer@sectionintoc {3}{Emergence of $q$-cores}{9}{0}{3}
+\beamer@sectionintoc {2}{The giant component}{14}{0}{2}
+\beamer@sectionintoc {3}{Emergence of $q$-cores}{23}{0}{3}
+\beamer@sectionintoc {4}{The ferromagnetic Ising model}{31}{0}{4}
+\beamer@sectionintoc {5}{Inverse Ising model}{31}{0}{5}
+\beamer@sectionintoc {6}{Appendix}{31}{0}{6}
