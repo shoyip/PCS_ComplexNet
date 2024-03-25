@@ -14,4 +14,7 @@
 \beamer@slide {eq:indfunc}{26}
 \beamer@slide {eq:avgcon}{26}
 \beamer@slide {eq:wormwald_ode}{27}
-\beamer@slide {fig:qcore}{30}
+\beamer@slide {eq:ode_compact}{29}
+\beamer@slide {ref:ode_evol_pi03}{31}
+\beamer@slide {ref:ode_evol_pi03}{32}
+\beamer@slide {fig:qcore}{33}

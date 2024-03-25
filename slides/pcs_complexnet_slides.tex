@@ -380,6 +380,7 @@
     We can rephrase the ODE as
     \begin{equation}
         \dv{\vec p(t)}{t} = M(t) \vec p(t)
+        \label{eq:ode_compact}
     \end{equation}
     where
     {\scriptsize
@@ -394,6 +395,42 @@
     \end{pmatrix}
     $$
     }
+
+    Equation~\ref{eq:ode_compact} is an initial value problem and it can be
+    solved numerically with the \alert{Runge-Kutta} method.
+\end{frame}
+
+\begin{frame}{Runge-Kutta method for the IVP}
+    An IVP can be solved numerically with the \alert{Runge-Kutta} method. 
+
+    For each timestep from $t$ to $t+h$ we can compute \cite{oderk} the function
+    value as
+    \begin{align}
+        K_1 &= h f(t, u)\\
+        K_2 &= h f(t + h/2, u + K_1/2)\\
+        K_3 &= h f(t + h/2, u + K_2/2)\\
+        K_4 &= h f(t + h, u + K_3)\\
+        u(t+h) &\approx u + \frac{1}{6}(K_1 + 2 K_2 + 2 K_3 + K_4)
+    \end{align}
+\end{frame}
+
+\begin{frame}{Example of the ODE: $\pi=0.3$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.6\textwidth]{ode_evol_pi03.pdf}
+        \caption{Evolution of the ODE for $\pi=0.3$}
+        \label{ref:ode_evol_pi03}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Example of the ODE: $\pi=0.8$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.6\textwidth]{ode_evol_pi08.pdf}
+        \caption{Evolution of the ODE for $\pi=0.8$, the time where all rates
+        go to zero is the \emph{halting time} $T_f$}
+        \label{ref:ode_evol_pi03}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{The size of the 3-core}

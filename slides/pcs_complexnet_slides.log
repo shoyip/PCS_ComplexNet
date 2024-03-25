@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  24 MAR 2024 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  25 MAR 2024 09:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**pcs_complexnet_slides
+**pcs_complexnet_slides.tex
 (./pcs_complexnet_slides.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
@@ -971,7 +971,11 @@ Package: physics
 \@quotelevel=\count471
 \@quotereset=\count472
 
-(./pcs_complexnet_slides.aux)
+(./pcs_complexnet_slides.aux
+
+LaTeX Warning: Label `ref:ode_evol_pi03' multiply defined.
+
+)
 \openout1 = `pcs_complexnet_slides.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -1260,24 +1264,48 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ] [29
 
+] [30
+
 ]
-<../assets//qcore.pdf, id=396, 409.62848pt x 327.20317pt>
+<../assets//ode_evol_pi03.pdf, id=407, 410.9616pt x 328.08145pt>
+File: ../assets//ode_evol_pi03.pdf Graphic file (type pdf)
+<use ../assets//ode_evol_pi03.pdf>
+Package pdftex.def Info: ../assets//ode_evol_pi03.pdf  used on input line 424.
+(pdftex.def)             Requested size: 205.37926pt x 163.96022pt.
+ [31
+
+ <../assets//ode_evol_pi03.pdf>]
+<../assets//ode_evol_pi08.pdf, id=461, 410.9616pt x 328.08145pt>
+File: ../assets//ode_evol_pi08.pdf Graphic file (type pdf)
+<use ../assets//ode_evol_pi08.pdf>
+Package pdftex.def Info: ../assets//ode_evol_pi08.pdf  used on input line 434.
+(pdftex.def)             Requested size: 205.37926pt x 163.96022pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{ref:ode_evol_
+pi03}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.434 \end{frame}
+                  [32
+
+ <../assets//ode_evol_pi08.pdf>]
+<../assets//qcore.pdf, id=514, 409.62848pt x 327.20317pt>
 File: ../assets//qcore.pdf Graphic file (type pdf)
 <use ../assets//qcore.pdf>
-Package pdftex.def Info: ../assets//qcore.pdf  used on input line 407.
+Package pdftex.def Info: ../assets//qcore.pdf  used on input line 444.
 (pdftex.def)             Requested size: 218.57715pt x 174.58861pt.
 
-Overfull \vbox (2.58463pt too high) detected at line 407
+Overfull \vbox (2.58463pt too high) detected at line 444
  []
 
-[30
+[33
 
  <../assets//qcore.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 417.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 454.
 
-[31
+[34
 
 ]
 \tf@nav=\write7
@@ -1290,6 +1318,9 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 \openout9 = `pcs_complexnet_slides.snm'.
 
  (./pcs_complexnet_slides.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `pcs_complexnet_slides.out' has not changed.
 (rerunfilecheck)             Checksum: E15E7D4606BA375B15E887586FDBD5A5;1068.
 Package logreq Info: Writing requests to 'pcs_complexnet_slides.run.xml'.
@@ -1297,32 +1328,33 @@ Package logreq Info: Writing requests to 'pcs_complexnet_slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30561 strings out of 477985
- 591680 string characters out of 5840059
+ 30606 strings out of 477985
+ 592640 string characters out of 5840059
  1867388 words of memory out of 5000000
- 50147 multiletter control sequences out of 15000+600000
- 525674 words of font info for 81 fonts, out of 8000000 for 9000
+ 50179 multiletter control sequences out of 15000+600000
+ 526140 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,18n,104p,690b,1366s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,18n,104p,694b,1455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9
-.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb>
-Output written on pcs_complexnet_slides.pdf (31 pages, 265360 bytes).
+s/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
+8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on pcs_complexnet_slides.pdf (34 pages, 321480 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 373 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 683 PDF objects out of 1000 (max. 8388607)
+ 425 compressed objects within 5 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

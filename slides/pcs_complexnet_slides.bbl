@@ -55,6 +55,33 @@
       \field{year}{2005}
       \field{dateera}{ce}
     \endentry
+    \entry{oderk}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=43cb27d4586c1d21dfbe8a098a853340}{%
+           family={{LeMesurier}},
+           familyi={L\bibinitperiod},
+           given={Brenton},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{43cb27d4586c1d21dfbe8a098a853340}
+      \strng{fullhash}{43cb27d4586c1d21dfbe8a098a853340}
+      \strng{bibnamehash}{43cb27d4586c1d21dfbe8a098a853340}
+      \strng{authorbibnamehash}{43cb27d4586c1d21dfbe8a098a853340}
+      \strng{authornamehash}{43cb27d4586c1d21dfbe8a098a853340}
+      \strng{authorfullhash}{43cb27d4586c1d21dfbe8a098a853340}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Elementary Numerical Analysis with Python}
+      \field{title}{Initial Value Problems for {ODEs}, Part 2: Runge-Kutta Methods}
+      \verb{urlraw}
+      \verb https://lemesurierb.people.cofc.edu/elementary-numerical-analysis-python/notebooks/ODE-IVP-2-Runge-Kutta-python.html
+      \endverb
+      \verb{url}
+      \verb https://lemesurierb.people.cofc.edu/elementary-numerical-analysis-python/notebooks/ODE-IVP-2-Runge-Kutta-python.html
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
