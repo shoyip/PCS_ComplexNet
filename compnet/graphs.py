@@ -181,18 +181,6 @@ class ConfigModelGraph:
       current_edges = new_edges
 
     return qcoresize
-
-  def generate_spins(self):
-    """
-    Generate a random configuration of spin values.
-    """
-    self.spins = np.random.randint(low=0, high=2, size=self.N) * 2 - 1
-
-  def find_spin_neighbourhoods(self):
-    """
-    Find and store the neighbourhood spin values of each spin.
-    """
-    self.spin_neighbourhoods = {k: [self.spins[e] for e in v] for k, v in self.neighbourhoods.items()}
   
   def find_adjacency(self):
     """
