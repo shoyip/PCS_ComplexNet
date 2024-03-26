@@ -2,9 +2,11 @@
 PROBLEM 4: THE FERROMAGNETIC ISING MODEL
 """
 
-from compnet.ising import IsingConfigModelDegreeGraph, compute_autocorr
+from compnet.ising import IsingConfigModelDegreeGraph, autocorr
 import matplotlib.pyplot as plt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 import numpy as np
+import time
 
 # HOW TO USE THE IsingConfigModelDegreeGraph CLASS
 
@@ -28,11 +30,6 @@ G.generate_spins()
 # generate the dictionary of neighbouring spins for each node
 G.find_spin_neighbourhoods()
 
-def autocorr2(x):
-    r2=np.fft.ifft(np.abs(np.fft.fft(x))**2).real
-    c=(r2/x.shape-np.mean(x)**2)/np.std(x)**2
-    return c[:len(x)//2]
-
 def measure_autocorr():
     mcmc_sweeps = 2_000
     fig, axs = plt.subplots(4, 4, figsize=(30, 20))
@@ -45,13 +42,65 @@ def measure_autocorr():
             G.find_neighbourhoods()
             G.generate_spins()
             G.find_spin_neighbourhoods()
-            step_mags = np.abs(G.mcmc_wolff(T=T, mcmc_sweeps=mcmc_sweeps))
-            acf = autocorr2(step_mags)
+            sweep_mags = np.abs(G.mcmc_wolff(T=T, mcmc_sweeps=mcmc_sweeps))
+            acf = autocorr(sweep_mags)
             axs[i][j].plot(acf)
             axs[i][j].set_title(f'$T={T}, \pi={pi}$')
     plt.close()
     
     fig.savefig('assets/wolff_mags.pdf', bbox_inches='tight')
 
+def make_heatmap():
+    mcmc_sweeps = 500
+    eq_sweeps = 100
+    sample_sweeps = 20
+
+    Ts = np.linspace(0.01, 4., 7)
+    pis = np.linspace(0.01, 1., 15)
+
+    heatmap_matrix_means = np.zeros((7, 15))
+    heatmap_matrix_stds = np.zeros((7, 15))
+
+    for i in range(7):
+        for j in range(15):
+            start = time.time()
+            T = Ts[i]
+            pi = pis[j]
+            print(f'Computing mag value for T={T}, pi={pi}...')
+            sweep_mags = []
+            for iteration in range(20):
+                degree_dict = {1: 1-pi, 4: pi}
+                G = IsingConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
+                G.generate_graph()
+                G.find_neighbourhoods()
+                G.generate_spins()
+                G.find_spin_neighbourhoods()
+                sweep_mag = np.abs(
+                        G.mcmc_wolff(
+                            T=T,
+                            mcmc_sweeps=mcmc_sweeps,
+                            return_all=False,
+                            eq_sweeps=eq_sweeps,
+                            sample_sweeps=sample_sweeps))
+                sweep_mags.append(sweep_mag)
+            heatmap_matrix_means[i][j] = np.mean(sweep_mags)
+            heatmap_matrix_stds[i][j] = np.std(sweep_mags) / np.sqrt(20)
+            stop = time.time()
+            print(f'Took {(stop-start)//60:.0f}m{(stop-start)%60:.0f}s')
+
+    fig, ax = plt.subplots()
+    im = plt.imshow(heatmap_matrix_means, cmap='inferno')
+    plt.xticks(Ts)
+    plt.yticks(pis)
+    plt.xlabel(r'$T$')
+    plt.ylabel(r'$\pi$')
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.05)
+    plt.colorbar(im, cax=cax)
+    plt.close()
+    fig.savefig('assets/mcmc_heatmap.pdf', bbox_inches='tight')
+
+
+
 if __name__ == "__main__":
-    pass
+    make_heatmap()

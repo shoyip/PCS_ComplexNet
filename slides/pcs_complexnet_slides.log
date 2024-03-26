@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  25 MAR 2024 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  25 MAR 2024 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,11 +1301,19 @@ Overfull \vbox (2.58463pt too high) detected at line 444
 [33
 
  <../assets//qcore.pdf>]
+<../assets//wolff_mags.pdf, id=569, 1726.13008pt x 1159.32806pt>
+File: ../assets//wolff_mags.pdf Graphic file (type pdf)
+<use ../assets//wolff_mags.pdf>
+Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 450.
+(pdftex.def)             Requested size: 342.2953pt x 229.88023pt.
+ [34
+
+ <../assets//wolff_mags.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 454.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 458.
 
-[34
+[35
 
 ]
 \tf@nav=\write7
@@ -1328,10 +1336,10 @@ Package logreq Info: Writing requests to 'pcs_complexnet_slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30606 strings out of 477985
- 592640 string characters out of 5840059
+ 30619 strings out of 477985
+ 592942 string characters out of 5840059
  1867388 words of memory out of 5000000
- 50179 multiletter control sequences out of 15000+600000
+ 50190 multiletter control sequences out of 15000+600000
  526140 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,18n,104p,694b,1455s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1351,10 +1359,10 @@ t/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1
 nts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pcs_complexnet_slides.pdf (34 pages, 321480 bytes).
+Output written on pcs_complexnet_slides.pdf (35 pages, 455246 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 425 compressed objects within 5 object streams
- 97 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 713 PDF objects out of 1000 (max. 8388607)
+ 438 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

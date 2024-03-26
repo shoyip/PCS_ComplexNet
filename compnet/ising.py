@@ -15,7 +15,12 @@ class IsingConfigModelDegreeGraph(ConfigModelDegreeGraph):
         """
         self.spin_neighbourhoods = {k: [self.spins[e] for e in v] for k, v in self.neighbourhoods.items()}
 
-    def mcmc_wolff(self, T, mcmc_sweeps=1_000):
+    def mcmc_wolff(self,
+                   T,
+                   return_all=True,
+                   mcmc_sweeps=1_000,
+                   eq_sweeps=100,
+                   sample_sweeps=50):
         def mcmc_wolff_sweep_mag(self, p_add):
             # update the neighbourhoods and the spin neighbourhoods
             self.find_neighbourhoods()
@@ -59,20 +64,20 @@ class IsingConfigModelDegreeGraph(ConfigModelDegreeGraph):
         p_add = 1. - np.exp(-2*beta)
         # iterate over the mcmc runs
         sweep_mags = []
-        for mcmc_step in range(mcmc_sweeps):
+        for mcmc_sweep in range(mcmc_sweeps):
             sweep_mag = mcmc_wolff_sweep_mag(self, p_add)
-            sweep_mags.append(sweep_mag)
-        return np.array(sweep_mags) / self.N
+            if return_all:
+                sweep_mags.append(sweep_mag)
+            elif (mcmc_sweep%sample_sweeps) & (mcmc_sweep>eq_sweeps):
+                sweep_mags.append(sweep_mag)
+            else:
+                continue
+        if return_all:
+            return np.array(sweep_mags) / self.N
+        else:
+            return np.mean(sweep_mags) / self.N
 
-def compute_autocorr(time_series):
-    def next_power_two(n):
-        i=1
-        while i<n:
-            i=i<<1
-        return n
-
-    n = len(time_series)
-    f = np.fft.rfft(time_series, n=next_power_two(n))
-    acf = np.fft.irfft(f*np.conjugate(f))[:n]
-
-    return acf
+def autocorr(x):
+    r2=np.fft.ifft(np.abs(np.fft.fft(x))**2).real
+    c=(r2/x.shape-np.mean(x)**2)/np.std(x)**2
+    return c[:len(x)//2]
