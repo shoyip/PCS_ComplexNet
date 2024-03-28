@@ -18,3 +18,6 @@
 \beamer@slide {ref:ode_evol_pi03}{31}
 \beamer@slide {ref:ode_evol_pi03}{32}
 \beamer@slide {fig:qcore}{33}
+\beamer@slide {eq:ferroising_ham}{34}
+\beamer@slide {algo:metropolis}{37}
+\beamer@slide {algo:wolff}{39}

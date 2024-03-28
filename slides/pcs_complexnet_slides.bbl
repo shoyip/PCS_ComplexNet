@@ -82,6 +82,42 @@
       \verb https://lemesurierb.people.cofc.edu/elementary-numerical-analysis-python/notebooks/ODE-IVP-2-Runge-Kutta-python.html
       \endverb
     \endentry
+    \entry{newman_barkema}{book}{}
+      \name{author}{2}{}{%
+        {{hash=214f45e2823b5430ca6f11c0fb3b6552}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Mark\bibnamedelimb E.\bibnamedelimi J.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=52c30a3a3fb058013d1efef0d8627287}{%
+           family={Barkema},
+           familyi={B\bibinitperiod},
+           given={Gerard\bibnamedelima T.},
+           giveni={G\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \list{publisher}{1}{%
+        {Clarendon Press [u.a.]}%
+      }
+      \strng{namehash}{52b9c7c5d496985980b9af5839591d25}
+      \strng{fullhash}{52b9c7c5d496985980b9af5839591d25}
+      \strng{bibnamehash}{52b9c7c5d496985980b9af5839591d25}
+      \strng{authorbibnamehash}{52b9c7c5d496985980b9af5839591d25}
+      \strng{authornamehash}{52b9c7c5d496985980b9af5839591d25}
+      \strng{authorfullhash}{52b9c7c5d496985980b9af5839591d25}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Reprinted (with corr.)}
+      \field{isbn}{978-0-19-851797-9 978-0-19-851796-2}
+      \field{pagetotal}{475}
+      \field{title}{Monte Carlo methods in statistical physics}
+      \field{year}{2010}
+      \field{dateera}{ce}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

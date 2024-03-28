@@ -1,15 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'pcs_complexnet_slides.blg'
-[86] biber:340> INFO - === lun mar 25, 2024, 09:03:39
-[102] Biber.pm:419> INFO - Reading 'pcs_complexnet_slides.bcf'
-[174] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
-[192] Biber.pm:4419> INFO - Processing section 0
-[203] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[204] bibtex.pm:1713> INFO - LaTeX decoding ...
-[210] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[283] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[283] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[283] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[283] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[292] bbl.pm:660> INFO - Writing 'pcs_complexnet_slides.bbl' with encoding 'UTF-8'
-[293] bbl.pm:763> INFO - Output to pcs_complexnet_slides.bbl
+[97] biber:340> INFO - === mar mar 26, 2024, 18:26:15
+[136] Biber.pm:419> INFO - Reading 'pcs_complexnet_slides.bcf'
+[217] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[238] Biber.pm:4419> INFO - Processing section 0
+[260] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[261] bibtex.pm:1713> INFO - LaTeX decoding ...
+[271] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[371] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[371] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[371] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[371] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[385] bbl.pm:660> INFO - Writing 'pcs_complexnet_slides.bbl' with encoding 'UTF-8'
+[386] bbl.pm:763> INFO - Output to pcs_complexnet_slides.bbl
+[386] Biber.pm:131> WARN - ISBN '978-0-19-851797-9 978-0-19-851796-2' in entry 'newman_barkema' is invalid - run biber with '--validate_datamodel' for details.
+[387] Biber.pm:133> INFO - WARNINGS: 1
