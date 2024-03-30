@@ -10,6 +10,7 @@
 
 \parskip=10pt
 \newcommand{\arctanh}{\text{arctanh}}
+\newcommand{\reqeq}{\overset{!}{=}}
 
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 
@@ -466,6 +467,9 @@
     node.
 \end{frame}
 
+\begin{frame}{What do we expect}
+\end{frame}
+
 \begin{frame}{MCMC}
     In order to simulate a ferromagnetic Ising model on a random graph sampled
     from $\mathcal{G}$, we might use \alert{Monte Carlo Markov Chains}.
@@ -572,6 +576,19 @@
 \end{frame}
 
 \begin{frame}{Belief Propagation}
+    Another way to study the Ising model is by using the \alert{belief
+    propagation} equations.
+
+    They are equations that are defined on tree-like graphs. These equations
+    allow us to make an exact estimate of the local fields...
+\end{frame}
+
+\begin{frame}{Approximate Belief Propagation}
+    The BP equations can also be applied to the case of graphs that have loops.
+    In that case they are approximate equations, and
+\end{frame}
+
+\begin{frame}{Population dynamics}
 \end{frame}
 
 \begin{frame}{Linear stability analysis and phase diagram}
@@ -649,11 +666,12 @@
     topology of the graph (i.e. the edges) just by looking at the behaviour of
     the single components (i.e. the nodes).
     
-    This is called an \alert{inverse problem}.
+    This task is hence that of estimating ``the rule'' once a set of data is
+    given, and it is called an \alert{inverse problem}.
 \end{frame}
 
 \begin{frame}{Inverse problem}
-    In particular we will do the following:
+    In particular we will construct the dataset as follows:
     \begin{itemize}
         \item Pick a random $G \in \mathcal{G}$
         \item Initialize spins over $G$ and perform an MCMC run in order to
@@ -661,10 +679,11 @@
             phase)
         \item Repeat this $M$ times in order to get $M$ samples of equilibrium
             spin configurations for $G$
-        \item Perform inference over the dataset: in particular we will study
-            its \alert{correlation matrix} and the \alert{mean field
-            approximation inference}
     \end{itemize}
+
+    Then we will attempt to perform inference over the dataset: in particular we
+    will study its \alert{correlation matrix} and the \alert{naive mean field
+    approximation inference}.
 \end{frame}
 
 \begin{frame}{Correlations}
@@ -672,8 +691,8 @@
     $\Sigma$ matrix of spin configurations (an $M \times N$ matrix), we can
     compute the \alert{correlation matrix}
     \begin{equation}
-        C_{ij} = \expval{\sigma_i \sigma_j}_m - \expval{\sigma_i}
-        \expval{\sigma_j}
+        C_{ij} = \expval{\sigma_i \sigma_j}_m - \expval{\sigma_i}_m
+        \expval{\sigma_j}_m
     \end{equation}
 
     Then we can compute the \alert{positive predictive value} (PPV) by sorting
@@ -686,18 +705,115 @@
     \end{equation}
 \end{frame}
 
-\begin{frame}{Positive Predictive Value}
+\begin{frame}{Boltzmann machines}
+    In order to perform network reconstruction on categorical variables (such
+    our case, i.e. $\sigma_i=\pm 1$) we can use the \alert{Boltzmann machine}
+    approach.
+
+    By enforcing the maximisation of the log-likelihood over the \alert{fields}
+    parameters $h_i$ and the {interactions} parameter $J_{ij}$ we get
+    respectively the \alert{moment-matching} conditions between one- and
+    two-points statistics of the data and the model. \cite[89]{spddm}
+
+    \begin{align}
+        \pdv{\mathcal{L}}{h_i} \reqeq 0 \quad &\Rightarrow \quad \mu_i =
+        \expval{\sigma_i} \label{eq:mommatch1}\\
+        \pdv{\mathcal{L}}{J_{ij}} \reqeq 0 \quad &\Rightarrow \quad \mu_{ij} =
+        \expval{\sigma_i\sigma_j} \label{eq:mommatch2}
+    \end{align}
 \end{frame}
 
-\begin{frame}{Naive Mean Field approximation}
+\begin{frame}{Boltzmann Machine Learning}
+    Solving directly Equations~\ref{eq:mommatch1} and \ref{eq:mommatch2} is
+    nontrivial, since finding the averages over the model distributions is hard.
+
+    The problem can be recasted into an ML problem (\alert{Boltzmann machine
+    learning}),
+    where we would iteratively have $h_i$ and $J_{ij}$, and we would perform an
+    MCMC run until equilibration, then we would update the parameters
+    $$
+    h_i^{t+1} = h_i^t + \eta_h (\mu_i - \expval{\sigma_i})
+    $$
+    $$
+    J_{ij}^{t+1} = J_{ij}^t + \eta_J (\mu_{ij} - \expval{\sigma_i\sigma_j})
+    $$
+    and so on, for many epochs until we have learned the parameters.
+    This amounts to a gradient descent process over the log-likelihood.
+
+    This process still requires many MCMC runs and also explores a
+    high-dimensional space, which makes the learning harder.
 \end{frame}
 
-\begin{frame}{Interaction matrix}
+\begin{frame}{Naive Mean Field Approximation}
+    We might want to find an approximation in which we can express
+    \alert{fields} and \alert{couplings} analytically.
+
+    If we make a \alert{mean field} ansatz (i.e. the Boltzmann distribution
+    factorizes in the sites) we can recast the problem of maximising a
+    likelihood into that of inverting a matrix.
+
+    In fact we can take the mean field free energy
+    \begin{equation}
+        G^{\text{mf}}(\vec m, J) = - \sum_{i<j} J_{ij} m_i m_j +
+        \sum_i \left[ \frac{1+m_i}{2} \log \frac{1+m_i}{2} + \frac{1-m_i}{2}
+        \log \frac{1-m_i}{2} \right]
+        \label{eq:mf_free}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Naive Mean Field Approximation}
+    If we derive Eq.~\ref{eq:mf_free} twice wrt $m_i$ we get that the coupling
+    matrix $J^{\text{mf}}_{ij}$ is equal to minus the inverse correlation matrix
+    $[C]_{ij}^{-1}$, which is much easier to compute than the maximum
+    log-likelihood.
+
+    \begin{equation}
+        J^{\text{mf}}_{ij} = - [C]_{ij}^{-1}
+    \end{equation}
+
+    Then we could compute the fields since $h_i^{\text{mf}}=\pdv{G}{m_i}$ hence
+    \begin{equation}
+    h_i^{\text{mf}} = -\sum_{j\neq i} J_{ij}^{\text{mf}} m_j + \arctanh{m_i}
+    \end{equation}
+    \cite[17]{inverse}
+\end{frame}
+
+\begin{frame}{Results for different dataset sizes}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.45\textwidth]{ppv_1h}
+        \includegraphics[width=.45\textwidth]{nmf_jhist_1h}
+        \caption{PPV and distribution of $J$ values for $M=100$}
+        \label{fig:nmf_1h}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Results for different dataset sizes}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.45\textwidth]{ppv_1k}
+        \includegraphics[width=.45\textwidth]{nmf_jhist_1k}
+        \caption{PPV and distribution of $J$ values for $M=1000$}
+        \label{fig:nmf_1k}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Results for different dataset sizes}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.45\textwidth]{ppv_10k}
+        \includegraphics[width=.45\textwidth]{nmf_jhist_10k}
+        \caption{PPV and distribution of $J$ values for $M=10000$}
+        \label{fig:nmf_10k}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Comments on inverse problem techniques}
 \end{frame}
 
 \section{Appendix}
 
-\begin{frame}{Bibliography}
+\begin{frame}[allowframebreaks]{Bibliography}
     \printbibliography
 \end{frame}
 

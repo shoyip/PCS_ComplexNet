@@ -77,30 +77,32 @@ class IsingConfigModelDegreeGraph(ConfigModelDegreeGraph):
         else:
             return np.mean(sweep_mags) / self.N
 
-    def find_bp_cavity_fields(self, beta, eps=1e-3, max_iter=30):
+    def find_bp_cavity_fields(self, beta, eps=1e-1, max_iter=50):
         # for each graph instance there is one cavity fields fixed point
         # first of all let us find the adjacency matrix
-        self.find_adjacency()
-        N = self.N
-        adj = self.adjacency
-        cavity_fields = np.random.normal(0., 1., size=(N, N)) * adj
         success = 0
-        # let us iterate until we reach the fixed point
-        for iteration in range(max_iter):
-            new_cavity_fields = np.zeros((N, N))
-            for i in range(N):
-                for j in range(N):
-                    if (adj[i, j]==1.):
-                        for k in range(N):
-                            if (k!=j):
-                                new_cavity_fields[i, j] += cavity_function(cavity_fields[k, i], beta)
-            err = np.abs(np.sum(cavity_fields - new_cavity_fields))
-            cavity_fields = new_cavity_fields
-            if (err < eps):
-                print('fp reached')
-                success = 1
-                break
-        if (success==0): print('fp not reached')
+        while success==0:
+          self.find_adjacency()
+          N = self.N
+          adj = self.adjacency
+          cavity_fields = np.random.normal(0., 1., size=(N, N)) * adj
+          # let us iterate until we reach the fixed point
+          for iteration in range(max_iter):
+              new_cavity_fields = np.zeros((N, N))
+              for i in range(N):
+                  for j in range(N):
+                      if (adj[i, j]==1.):
+                          for k in range(N):
+                              if (k!=j):
+                                  new_cavity_fields[i, j] += cavity_function(cavity_fields[k, i], beta)
+              err = np.abs(np.sum(cavity_fields - new_cavity_fields))
+              #print(err)
+              cavity_fields = new_cavity_fields
+              if (err < eps):
+                  print('fp reached')
+                  success = 1
+                  break
+          if (success==0): print('fp not reached')
 
         # once we have found the fixed point, we save the cavity fields
         self.cavity_fields = cavity_fields

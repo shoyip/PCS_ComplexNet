@@ -19,6 +19,68 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{spddm}{book}{}
+      \name{author}{6}{}{%
+        {{hash=ee559a3fa4799074d2a66198c55a606b}{%
+           family={Cocco},
+           familyi={C\bibinitperiod},
+           given={Simona},
+           giveni={S\bibinitperiod}}}%
+        {{hash=85e5b95f6f239c8bdea8b6418f68c42a}{%
+           family={Monasson},
+           familyi={M\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b55c839f7df026efd70f61249229a8fb}{%
+           family={Zamponi},
+           familyi={Z\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ee559a3fa4799074d2a66198c55a606b}{%
+           family={Cocco},
+           familyi={C\bibinitperiod},
+           given={Simona},
+           giveni={S\bibinitperiod}}}%
+        {{hash=85e5b95f6f239c8bdea8b6418f68c42a}{%
+           family={Monasson},
+           familyi={M\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b55c839f7df026efd70f61249229a8fb}{%
+           family={Zamponi},
+           familyi={Z\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford, New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{bb0d21bb37c6edf0441ae512002d377a}
+      \strng{fullhash}{edc2b29ffe670a20e109e8832559fb4f}
+      \strng{bibnamehash}{bb0d21bb37c6edf0441ae512002d377a}
+      \strng{authorbibnamehash}{bb0d21bb37c6edf0441ae512002d377a}
+      \strng{authornamehash}{bb0d21bb37c6edf0441ae512002d377a}
+      \strng{authorfullhash}{edc2b29ffe670a20e109e8832559fb4f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The study of most scientific fields now relies on an ever-increasing amount of data, due to instrumental and experimental progress in monitoring and manipulating complex systems made of many microscopic constituents. How can we make sense of such data, and use them to enhance our understanding of biological, physical, and chemical systems? Aimed at graduate students in physics, applied mathematics, and computational biology, the primary objective of this textbook is to introduce the concepts and methods necessary to answer this question at the intersection of probability theory, statistics, optimisation, statistical physics, inference, and machine learning.The second objective of this book is to provide practical applications for these methods, which will allow students to assimilate the underlying ideas and techniques. While readers of this textbook will need basic knowledge in programming (Python or an equivalent language), the main emphasis is not on mathematical rigour, but on the development of intuition and the deep connections with statistical physics. , The study of most scientific fields now relies on an ever-increasing amount of data, due to instrumental and experimental progress in monitoring and manipulating complex systems made of many microscopic constituents. How can we make sense of such data, and use them to enhance our understanding of biological, physical, and chemical systems? Aimed at graduate students in physics, applied mathematics, and computational biology, the primary objective of this textbook is to introduce the concepts and methods necessary to answer this question at the intersection of probability theory, statistics, optimisation, statistical physics, inference, and machine learning.The second objective of this book is to provide practical applications for these methods, which will allow students to assimilate the underlying ideas and techniques. While readers of this textbook will need basic knowledge in programming (Python or an equivalent language), the main emphasis is not on mathematical rigour, but on the development of intuition and the deep connections with statistical physics.}
+      \field{day}{9}
+      \field{isbn}{978-0-19-886474-5}
+      \field{month}{9}
+      \field{pagetotal}{192}
+      \field{shorttitle}{From Statistical Physics to Data-Driven Modelling}
+      \field{title}{From Statistical Physics to Data-Driven Modelling: with Applications to Quantitative Biology}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb Snapshot:/home/shoichi/Zotero/storage/2HBXUYRH/from-statistical-physics-to-data-driven-modelling-9780198864745.html:text/html
+      \endverb
+    \endentry
     \entry{weigt}{book}{}
       \name{author}{2}{}{%
         {{hash=4ce0c6e0033dd714f10c2a65f290cd45}{%
@@ -117,6 +179,66 @@
       \field{title}{Monte Carlo methods in statistical physics}
       \field{year}{2010}
       \field{dateera}{ce}
+    \endentry
+    \entry{inverse}{article}{}
+      \name{author}{3}{}{%
+        {{hash=63072844744b9ff15030c202dcca7d5e}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={H.\bibnamedelimi Chau},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=43077d96c4a7dff840bc34463d1d0751}{%
+           family={Zecchina},
+           familyi={Z\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fbf4d8c60254be3357d7b41d6e66d828}{%
+           family={Berg},
+           familyi={B\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{41094daa70f01998fbcab1c1f2383fba}
+      \strng{fullhash}{41094daa70f01998fbcab1c1f2383fba}
+      \strng{bibnamehash}{41094daa70f01998fbcab1c1f2383fba}
+      \strng{authorbibnamehash}{41094daa70f01998fbcab1c1f2383fba}
+      \strng{authornamehash}{41094daa70f01998fbcab1c1f2383fba}
+      \strng{authorfullhash}{41094daa70f01998fbcab1c1f2383fba}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Inverse problems in statistical physics are motivated by the challenges of ‘big data’ in different fields, in particular high-throughput experiments in biology. In inverse problems, the usual procedure of statistical physics needs to be reversed: Instead of calculating observables on the basis of model parameters, we seek to infer parameters of a model based on observations. In this review, we focus on the inverse Ising problem and closely related problems, namely how to infer the coupling strengths between spins given observed spin correlations, magnetizations, or other data. We review applications of the inverse Ising problem, including the reconstruction of neural connections, protein structure determination, and the inference of gene regulatory networks. For the inverse Ising problem in equilibrium, a number of controlled and uncontrolled approximate solutions have been developed in the statistical mechanics community. A particularly strong method, pseudolikelihood, stems from statistics. We also review the inverse Ising problem in the non-equilibrium case, where the model parameters must be reconstructed based on non-equilibrium statistics.}
+      \field{day}{3}
+      \field{issn}{0001-8732}
+      \field{journaltitle}{Advances in Physics}
+      \field{month}{7}
+      \field{note}{Publisher: Taylor \& Francis \_eprint: https://doi.org/10.1080/00018732.2017.1341604}
+      \field{number}{3}
+      \field{shorttitle}{Inverse statistical problems}
+      \field{title}{Inverse statistical problems: from the inverse Ising problem to data science}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{volume}{66}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{197\bibrangedash 261}
+      \range{pages}{65}
+      \verb{doi}
+      \verb 10.1080/00018732.2017.1341604
+      \endverb
+      \verb{file}
+      \verb Submitted Version:/home/shoichi/Zotero/storage/GK7G5HXJ/Nguyen et al. - 2017 - Inverse statistical problems from the inverse Isi.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00018732.2017.1341604
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00018732.2017.1341604
+      \endverb
+      \keyw{02.30.Zz inverse problems,02.50.Tt inference methods,89.75.-k complex systems,data analysis,inference methods,inverse problems,network reconstruction,statistical physics of complex systems}
     \endentry
   \enddatalist
 \endrefsection

@@ -19,5 +19,11 @@
 \beamer@slide {ref:ode_evol_pi03}{32}
 \beamer@slide {fig:qcore}{33}
 \beamer@slide {eq:ferroising_ham}{34}
-\beamer@slide {algo:metropolis}{37}
-\beamer@slide {algo:wolff}{39}
+\beamer@slide {algo:metropolis}{38}
+\beamer@slide {algo:wolff}{40}
+\beamer@slide {eq:mommatch1}{53}
+\beamer@slide {eq:mommatch2}{53}
+\beamer@slide {eq:mf_free}{55}
+\beamer@slide {fig:nmf_1h}{57}
+\beamer@slide {fig:nmf_1k}{58}
+\beamer@slide {fig:nmf_10k}{59}
