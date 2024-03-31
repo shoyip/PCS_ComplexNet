@@ -38,9 +38,6 @@
     Erd\H{o}s and Alfr\'{e}d R\'{e}nyi in 1959.
 \end{frame}
 
-\begin{frame}{Random graphs}
-\end{frame}
-
 \begin{frame}{The problem with ER graphs}
     Graphs generated using the ER model have a Poisson degree distribution.
 
@@ -155,12 +152,9 @@
 
 \section{The giant component}
 
-\begin{frame}{The giant component}
-\end{frame}
-
 \begin{frame}{Detecting the giant component in an instance}
     We explore the connected components with a \alert{Breadth-First Search}
-    (BFS) algorithm \ref{algo:bfs}.
+    (BFS) Algorithm~\ref{algo:bfs}.
 
     Once all connected components have been detected, they are stored in a
     dictionary-like object and the size of the biggest is given as an output.
@@ -499,9 +493,10 @@
 \begin{frame}{The size of the 3-core}
     \begin{figure}
         \centering
-        \includegraphics[height=.7\textheight]{qcore}
+        \includegraphics[height=.6\textheight]{qcore}
         \caption{Comparison between theoretical value and measures from random
-        instances of the size of the 3-core}
+        instances of the size of the 3-core. It emerges in $\pi=0.68$ and jumps
+    to a size of $0.559$.}
         \label{fig:qcore}
     \end{figure}
 \end{frame}
@@ -676,34 +671,93 @@
     \begin{align}
         h_{i\to j} &= \frac{1}{2\beta} \sum_{k\in \partial i \setminus j} \log
         \left[ \frac{\cos{\beta(h_{k\to i} +1)}}{\cos{\beta(h_{k\to i} -1)}}
-        \right]\\
+        \right] \label{eq:ising_bp_cavity}\\
         h_{i} &= \frac{1}{2\beta} \sum_{k\in \partial i} \log
-        \left[ \frac{\cos{\beta(h_{k\to i} +1)}}{\cos{\beta(h_{k\to i} -1)}} \right]
+        \left[ \frac{\cos{\beta(h_{k\to i} +1)}}{\cos{\beta(h_{k\to i} -1)}}
+        \right] \label{eq:ising_bp_field}
     \end{align}
 \end{frame}
 
+\begin{frame}{BP equations for Ising}
+    The Equation~\ref{eq:ising_bp_cavity} is then run iteratively. We just
+    initialize randomly the fields, and run
+    $$
+    h_{i\to j}^{\text{new}} = \frac{1}{2\beta} \sum_{k\in \partial i \setminus
+    j} \log \left[ \frac{\cos{\beta(h^{\text{old}}_{k\to i}
+    +1)}}{\cos{\beta(h^{\text{old}}_{k\to i} -1)}} \right]
+    $$
+    many times until we reach convergence (e.g. we can check that the
+    elementwise difference between cavity fields are less than a given
+    threshold).
+    Once the fixed point has been found, we run Eq.~\ref{eq:ising_bp_field} just
+    once and we get the fields. These can be plugged into
+    \begin{equation}
+        m_i = \tanh(\beta h_i)
+    \end{equation}
+    to find the local magnetizations. The average magnetization is the computed
+    as $m = \sum_i m_i / N$.
+\end{frame}
+
+\begin{frame}{Distribution of cavity and effective fields}
+    Belief propagation is an algorithmic scheme that applies
+    \alert{instance-wise}. We might ask ourselves what happens instead in a
+    \alert{typical} case.
+
+    It might also be desirable that this description does not depend on the size
+    of an instance or the underlying structure.
+\end{frame}
+
+\begin{frame}{Distribution of cavity and effective fields}
+    The cavity and effective fields have respectively the following
+    distributions
+    \begin{multline}
+        \eta_{\text{cav}} (h) = \sum_{d=0}^{\infty} q_{d+1} \int \left(
+        \prod_{k=1}^d \dd{h_k} \eta_{\text{cav}}(h_k) \right) \\ \delta \left[ h -
+        \frac{1}{2\beta} \sum_{k=1}^d
+    \log{\frac{\cosh{\beta(h_k+1)}}{\cosh{\beta(h_k-1)}}} \right]
+    \label{eq:cav_field_distribution}
+\end{multline}
+\begin{multline}
+        \eta(h) = \sum_{d=0}^{\infty} p_d \int \left(
+        \prod_{k=1}^d \dd{h_k} \eta_{\text{cav}}(h_k) \right) \\ \delta \left[ h -
+        \frac{1}{2\beta} \sum_{k=1}^d
+    \log{\frac{\cosh{\beta(h_k+1)}}{\cosh{\beta(h_k-1)}}} \right]
+    \label{eq:eff_field_distribution}
+\end{multline}
+\end{frame}
+
 \begin{frame}{Population dynamics}
+    We can use a \alert{population dynamics} algorithm in order to find the
+    distribution of cavity and effective fields, as well as the magnetization
+    distribution.
+    \begin{itemize}
+        \item Initialize a population of $L$ fields $\vec h$ randomly
+        \item At each step pick $d$ elements of the population $\vec h$
+            randomly, compute the function inside the argument of the delta and
+            replace another random member of the population with the computed
+            value.
+        \item After many steps, the population should converge \emph{in
+            distribution} to a fixed (distribution) point. We can check this by
+            monitoring the moments.
+    \end{itemize}
+    Once the fixed point is reached, we can now find a new $L$ elements
+    \emph{effective fields} population, by running the same algorithm but
+    leaving the cavity fields population unchanged.
 \end{frame}
 
 \begin{frame}[plain]
+    \centering
     \includegraphics[width=.9\textwidth]{pd_cavity}
 \end{frame}
 
 \begin{frame}[plain]
+    \centering
     \includegraphics[width=.9\textwidth]{pd_fields}
 \end{frame}
 
 \begin{frame}{Linear stability analysis and phase diagram}
     We know that the cavity fields have a distribution given by
-    \begin{multline}
-        \eta_{\text{cav}}(h) =
-        \sum_{d=0}^{\infty} q_{d+1}
-        \int \left( \prod_{k=1}^d \dd{h_k} \eta_{\text{cav}} (h_k) \right) \\
-        \delta \left[ h - \frac{1}{2\beta} \sum_{k=1}^d
-            \log\left( \frac{\cosh{\beta(h_k+1)}}{\cosh{\beta(h_k-1)}} \right)
-        \right]
-        \label{eq:cav_field_distrib}
-    \end{multline}
+    Eq.~\ref{eq:cav_field_distribution}
     and also we know that the paramagnetic solution $\delta(h)$ is a
     \alert{fixed point} of the BP equations. We can perform a \alert{linear
     stability analysis} in order to understand how a small perturbation of the
@@ -717,8 +771,8 @@
     \begin{equation}
         \eta^{(0)} (h) = \delta(h-\epsilon_0)
     \end{equation}
-    if we replace it in Eq.~\ref{eq:cav_field_distrib} we get that at the next
-    iteration
+    if we replace it in Eq.~\ref{eq:cav_field_distribution} we get that at the
+    next iteration
     \begin{align}
         \epsilon_1 &= \int \dd{h} \eta^{(1)}(h) h\\
                    &= \sum_{d=0}^{\infty} q_{d+1} \frac{d}{2\beta} \log \left[
@@ -928,6 +982,21 @@
 \end{frame}
 
 \begin{frame}{Comments on inverse problem techniques}
+    We can see that
+    \begin{itemize}
+        \item as $M$ increases, we get better results since the PPV stay high
+            for a longer ordered amount of largest values of $C$ or $J$
+        \item in the $M=200$ case the performances of the NMF interaction matrix
+            $J$ are slightly worse than those of the correlation matrix
+        \item in the $M=2000$ case we see that the PPV is substantially the same
+            for $C$ and $J$
+        \item we can also evaluate the ability to reconstruct the network by the
+            ease of telling apart the pairs that are in the edge set and those
+            that are not ($C$ and $J$ perform approximately the same)
+    \end{itemize}
+    Correlations are usually deemed to be a bad variable for reconstructing
+    network edges. However, since the interactions encoded in the Ising RG are
+    pairwise, in this particular case correlations work well.
 \end{frame}
 
 \section{Appendix}
