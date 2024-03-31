@@ -2,5 +2,5 @@
 \beamer@sectionintoc {2}{The giant component}{14}{0}{2}
 \beamer@sectionintoc {3}{Emergence of $q$-cores}{25}{0}{3}
 \beamer@sectionintoc {4}{The ferromagnetic Ising model}{36}{0}{4}
-\beamer@sectionintoc {5}{Inverse Ising model}{55}{0}{5}
-\beamer@sectionintoc {6}{Appendix}{65}{0}{6}
+\beamer@sectionintoc {5}{Inverse Ising model}{57}{0}{5}
+\beamer@sectionintoc {6}{Appendix}{67}{0}{6}

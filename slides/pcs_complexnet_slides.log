@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  31 MAR 2024 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  31 MAR 2024 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1314,7 +1314,7 @@ Overfull \vbox (2.58463pt too high) detected at line 507
 File: ../assets//metropolis_acceptance.png Graphic file (type png)
 <use ../assets//metropolis_acceptance.png>
 Package pdftex.def Info: ../assets//metropolis_acceptance.png  used on input li
-ne 555.
+ne 570.
 (pdftex.def)             Requested size: 136.91603pt x 107.77864pt.
  [39
 
@@ -1324,7 +1324,7 @@ ne 555.
 <../assets//wolff.png, id=634, 721.19438pt x 331.2375pt>
 File: ../assets//wolff.png Graphic file (type png)
 <use ../assets//wolff.png>
-Package pdftex.def Info: ../assets//wolff.png  used on input line 591.
+Package pdftex.def Info: ../assets//wolff.png  used on input line 606.
 (pdftex.def)             Requested size: 136.91603pt x 62.88017pt.
  [41
 
@@ -1336,7 +1336,7 @@ Package pdftex.def Info: ../assets//wolff.png  used on input line 591.
 <../assets//wolff_mags.pdf, id=660, 1726.13008pt x 1159.32806pt>
 File: ../assets//wolff_mags.pdf Graphic file (type pdf)
 <use ../assets//wolff_mags.pdf>
-Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 632.
+Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 647.
 (pdftex.def)             Requested size: 342.2953pt x 229.88023pt.
 
 [44
@@ -1347,107 +1347,124 @@ Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 632.
 
 ] [47
 
-] [48
+]
+<../assets//pd_cavity.pdf, id=712, 1453.62764pt x 1159.32806pt>
+File: ../assets//pd_cavity.pdf Graphic file (type pdf)
+<use ../assets//pd_cavity.pdf>
+Package pdftex.def Info: ../assets//pd_cavity.pdf  used on input line 690.
+(pdftex.def)             Requested size: 308.06367pt x 245.695pt.
+ [48
 
-] [49
+ <../assets//pd_cavity.pdf>]
+<../assets//pd_fields.pdf, id=741, 1455.80153pt x 1159.32806pt>
+File: ../assets//pd_fields.pdf Graphic file (type pdf)
+<use ../assets//pd_fields.pdf>
+Package pdftex.def Info: ../assets//pd_fields.pdf  used on input line 694.
+(pdftex.def)             Requested size: 308.06367pt x 245.32352pt.
+[49
 
-] [50
+ <../assets//pd_fields.pdf>] [50
 
 ] [51
 
+] [52
+
+] [53
+
 ]
-<../assets//mcmc_heatmap.pdf, id=743, 930.36021pt x 727.86806pt>
+<../assets//mcmc_heatmap.pdf, id=800, 930.36021pt x 727.86806pt>
 File: ../assets//mcmc_heatmap.pdf Graphic file (type pdf)
 <use ../assets//mcmc_heatmap.pdf>
-Package pdftex.def Info: ../assets//mcmc_heatmap.pdf  used on input line 723.
+Package pdftex.def Info: ../assets//mcmc_heatmap.pdf  used on input line 769.
 (pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
- [52
-
- <../assets//mcmc_heatmap.pdf>]
-<../assets//bp_heatmap.pdf, id=785, 930.36021pt x 727.86806pt>
-File: ../assets//bp_heatmap.pdf Graphic file (type pdf)
-<use ../assets//bp_heatmap.pdf>
-Package pdftex.def Info: ../assets//bp_heatmap.pdf  used on input line 732.
-(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
- [53
-
- <../assets//bp_heatmap.pdf>]
-<../assets//pd_heatmap.pdf, id=827, 448.68063pt x 312.02145pt>
-File: ../assets//pd_heatmap.pdf Graphic file (type pdf)
-<use ../assets//pd_heatmap.pdf>
-Package pdftex.def Info: ../assets//pd_heatmap.pdf  used on input line 741.
-(pdftex.def)             Requested size: 273.83728pt x 190.43755pt.
  [54
 
- <../assets//pd_heatmap.pdf>] [55
+ <../assets//mcmc_heatmap.pdf>]
+<../assets//bp_heatmap.pdf, id=842, 930.36021pt x 727.86806pt>
+File: ../assets//bp_heatmap.pdf Graphic file (type pdf)
+<use ../assets//bp_heatmap.pdf>
+Package pdftex.def Info: ../assets//bp_heatmap.pdf  used on input line 778.
+(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
+ [55
 
-] [56
+ <../assets//bp_heatmap.pdf>]
+<../assets//pd_heatmap.pdf, id=885, 448.68063pt x 315.83257pt>
+File: ../assets//pd_heatmap.pdf Graphic file (type pdf)
+<use ../assets//pd_heatmap.pdf>
+Package pdftex.def Info: ../assets//pd_heatmap.pdf  used on input line 787.
+(pdftex.def)             Requested size: 273.83728pt x 192.7636pt.
+ [56
 
-] [57
+ <../assets//pd_heatmap.pdf>]
+[57
 
 ] [58
 
 ] [59
 
+] [60
+
+] [61
+
 ]
-Overfull \hbox (2.75685pt too wide) detected at line 845
+Overfull \hbox (2.75685pt too wide) detected at line 891
 []\OT1/cmss/m/it/10.95 G[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; \OT1/cms
 s/m/it/10.95 J\OT1/cmss/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmss/m/it
 /10.95 J[]m[]m[] \OT1/cmss/m/n/10.95 + [] [][] []
  []
 
-[60
+[62
 
-] [61
+] [63
 
 ]
-<../assets//ppv_2h.pdf, id=921, 409.62848pt x 329.86938pt>
+<../assets//ppv_2h.pdf, id=978, 409.62848pt x 329.86938pt>
 File: ../assets//ppv_2h.pdf Graphic file (type pdf)
 <use ../assets//ppv_2h.pdf>
-Package pdftex.def Info: ../assets//ppv_2h.pdf  used on input line 872.
+Package pdftex.def Info: ../assets//ppv_2h.pdf  used on input line 918.
 (pdftex.def)             Requested size: 102.68962pt x 82.69363pt.
-<../assets//nmf_chist_2h.pdf, id=922, 410.85078pt x 329.54002pt>
+<../assets//nmf_chist_2h.pdf, id=979, 410.85078pt x 329.54002pt>
 File: ../assets//nmf_chist_2h.pdf Graphic file (type pdf)
 <use ../assets//nmf_chist_2h.pdf>
-Package pdftex.def Info: ../assets//nmf_chist_2h.pdf  used on input line 872.
+Package pdftex.def Info: ../assets//nmf_chist_2h.pdf  used on input line 918.
 (pdftex.def)             Requested size: 102.68962pt x 82.36469pt.
-<../assets//nmf_jhist_2h.pdf, id=923, 405.47234pt x 329.54002pt>
+<../assets//nmf_jhist_2h.pdf, id=980, 405.47234pt x 329.54002pt>
 File: ../assets//nmf_jhist_2h.pdf Graphic file (type pdf)
 <use ../assets//nmf_jhist_2h.pdf>
-Package pdftex.def Info: ../assets//nmf_jhist_2h.pdf  used on input line 872.
+Package pdftex.def Info: ../assets//nmf_jhist_2h.pdf  used on input line 918.
 (pdftex.def)             Requested size: 102.68962pt x 83.45584pt.
- [62
+ [64
 
  <../assets//ppv_2h.pdf> <../assets//nmf_chist_2h.pdf> <../assets//nmf_jhist_2h
 .pdf>]
-<../assets//ppv_1k.pdf, id=1060, 409.62848pt x 329.86938pt>
+<../assets//ppv_1k.pdf, id=1117, 409.62848pt x 329.86938pt>
 File: ../assets//ppv_1k.pdf Graphic file (type pdf)
 <use ../assets//ppv_1k.pdf>
-Package pdftex.def Info: ../assets//ppv_1k.pdf  used on input line 882.
+Package pdftex.def Info: ../assets//ppv_1k.pdf  used on input line 928.
 (pdftex.def)             Requested size: 102.68962pt x 82.69363pt.
-<../assets//nmf_chist_1k.pdf, id=1061, 413.29608pt x 329.54002pt>
+<../assets//nmf_chist_1k.pdf, id=1118, 413.29608pt x 329.54002pt>
 File: ../assets//nmf_chist_1k.pdf Graphic file (type pdf)
 <use ../assets//nmf_chist_1k.pdf>
-Package pdftex.def Info: ../assets//nmf_chist_1k.pdf  used on input line 882.
+Package pdftex.def Info: ../assets//nmf_chist_1k.pdf  used on input line 928.
 (pdftex.def)             Requested size: 102.68962pt x 81.87692pt.
-<../assets//nmf_jhist_1k.pdf, id=1062, 405.47234pt x 329.54002pt>
+<../assets//nmf_jhist_1k.pdf, id=1119, 405.47234pt x 329.54002pt>
 File: ../assets//nmf_jhist_1k.pdf Graphic file (type pdf)
 <use ../assets//nmf_jhist_1k.pdf>
-Package pdftex.def Info: ../assets//nmf_jhist_1k.pdf  used on input line 882.
+Package pdftex.def Info: ../assets//nmf_jhist_1k.pdf  used on input line 928.
 (pdftex.def)             Requested size: 102.68962pt x 83.45584pt.
- [63
+ [65
 
  <../assets//ppv_1k.pdf> <../assets//nmf_chist_1k.pdf> <../assets//nmf_jhist_1k
-.pdf>] [64
+.pdf>] [66
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 891.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 937.
 
-[65
+[67
 
-] [66
+] [68
 
 
 ]
@@ -1471,10 +1488,10 @@ Package logreq Info: Writing requests to 'pcs_complexnet_slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30911 strings out of 477985
- 598775 string characters out of 5840059
+ 30939 strings out of 477985
+ 599383 string characters out of 5840059
  1867388 words of memory out of 5000000
- 50400 multiletter control sequences out of 15000+600000
+ 50424 multiletter control sequences out of 15000+600000
  526140 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,18n,104p,2265b,1595s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1498,10 +1515,10 @@ ublic/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pcs_complexnet_slides.pdf (66 pages, 750145 bytes).
+Output written on pcs_complexnet_slides.pdf (68 pages, 795514 bytes).
 PDF statistics:
- 1347 PDF objects out of 1440 (max. 8388607)
- 756 compressed objects within 8 object streams
- 178 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1407 PDF objects out of 1440 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 182 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -524,6 +524,21 @@
 \end{frame}
 
 \begin{frame}{What do we expect}
+    Let us think about what can we expect from the ferromagnetic Ising model
+    given the knowledge about the structure.
+
+    \begin{itemize}
+        \item At small values of $\pi$ we have only small components. Since
+            they are \alert{all independent}, they will have on average zero
+            magnetization.
+        \item Below a certain criticality threshold we get an extensive giant
+            component: these spins are correlated.
+    \end{itemize}
+
+    At low temperature we get the ground state. But since only spins that belong
+    to a connected component try to align, we expect that on average the
+    magnetizations of spins that do not belong to the GC will be zero and that
+    the total average magnetization will depend on the size of the GC.
 \end{frame}
 
 \begin{frame}{MCMC}
@@ -635,16 +650,47 @@
     Another way to study the Ising model is by using the \alert{belief
     propagation} equations.
 
-    They are equations that are defined on tree-like graphs. These equations
-    allow us to make an exact estimate of the local fields...
+    Given a random graph instance, belief propagation allows for an
+    \alert{algorithmic} way to study its properties.
+
+    If a graph is tree-like, then we can compute the \alert{cavity marginals}
+    $\mu_{i\to j}(\sigma_i)$, which are the probabilities that the $i$-th site
+    has spin $\sigma_i$ given its neighbourhood $\partial i$ except $j$.
+    Then we can find the \alert{true marginal} $\mu_i(\sigma_i)$.
+
+    The algorithm becomes approximate in the case of graphs that are not
+    tree-like and can be solved by finding a fixed point for the cavity
+    marginals.
 \end{frame}
 
-\begin{frame}{Approximate Belief Propagation}
-    The BP equations can also be applied to the case of graphs that have loops.
-    In that case they are approximate equations, and
+\begin{frame}{BP equations for Ising}
+    The BP equations are
+    \begin{align}
+        \mu_{i\to j}(\sigma_i) &= \frac{1}{\tilde Z_{i\to j}} \prod_{k \in
+        \partial i \setminus j} \sum_{\sigma_k} e^{\beta \sigma_i \sigma_k}
+        \mu_{k\to i} (\sigma_k)\\
+            \mu_i(\sigma_i) &= \frac{1}{\tilde Z_i} \prod_{k\in \partial i}
+            \sum_{\sigma_k} e^{\beta \sigma_i \sigma_k} \mu_{k\to i} (\sigma_k)
+    \end{align}
+    and in the case of the Ising model we get
+    \begin{align}
+        h_{i\to j} &= \frac{1}{2\beta} \sum_{k\in \partial i \setminus j} \log
+        \left[ \frac{\cos{\beta(h_{k\to i} +1)}}{\cos{\beta(h_{k\to i} -1)}}
+        \right]\\
+        h_{i} &= \frac{1}{2\beta} \sum_{k\in \partial i} \log
+        \left[ \frac{\cos{\beta(h_{k\to i} +1)}}{\cos{\beta(h_{k\to i} -1)}} \right]
+    \end{align}
 \end{frame}
 
 \begin{frame}{Population dynamics}
+\end{frame}
+
+\begin{frame}[plain]
+    \includegraphics[width=.9\textwidth]{pd_cavity}
+\end{frame}
+
+\begin{frame}[plain]
+    \includegraphics[width=.9\textwidth]{pd_fields}
 \end{frame}
 
 \begin{frame}{Linear stability analysis and phase diagram}

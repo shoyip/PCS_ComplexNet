@@ -75,7 +75,7 @@ def make_pd_histo():
     L = 10_000
     max_iter = 100_000
 
-    Ts = np.linspace(0.01, 4., nT)
+    Ts = np.linspace(0.5, 4., nT)
     pis = np.linspace(0.01, 1., npi)
 
     pd_cav = np.zeros((nT, npi, L))
@@ -141,16 +141,5 @@ def make_pd_samples():
     np.save('data/pd_mags.npy', pd_samples)
 
 if __name__ == "__main__":
-    #make_pd_histo()
-    make_pd_samples()
-#    pi = 0.5
-#    T = 1.2
-#    beta = 1. / T
-#    cavity_population = popdyn_cavity(pi=pi, T=T, max_iter=100_000)
-#    fields_population = popdyn_fields(cavity_population, pi=pi, T=T, max_iter=100_000)
-#    mags = np.tanh(beta * fields_population)
-#    print(np.mean(np.abs(mags)))
-#    plt.figure()
-#    plt.hist(mags)
-#    plt.xlim([0, 1])
-#    plt.show()
+    make_pd_histo()
+    #make_pd_samples()
