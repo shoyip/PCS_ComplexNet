@@ -38,6 +38,26 @@
     Erd\H{o}s and Alfr\'{e}d R\'{e}nyi in 1959.
 \end{frame}
 
+\begin{frame}{Data structures for storing a graph}
+    A \alert{graph} $G=(E, V)$ is determined by its \emph{edge set} and its
+    \emph{vertices}. There are two main ways in which we could store the data
+    about a graph:
+    \begin{itemize}
+        \item We might think most straightforwardly of using an \alert{adjacency
+            matrix}, an $N\times N$ matrix ($N=|V|$) filled with zeros for nodes
+            that are not connected and ones for those that are connected.
+        \item Another way of storing graphs is by the use of \alert{edge lists},
+            which are lists of the tuples referring to the connected nodes.
+        \item We could also store the information of graphs by enumerating the
+            \alert{neighbourhoods} of each node.
+    \end{itemize}
+    The sparsity of the graph (i.e. usually most nodes are not connected) gives
+    us a hint that we should prefer the last two data structures. This will be
+    the case in most of the examples, but sometimes it will also be useful to
+    have an adjacency matrix (when we will resort to the use of tools from
+    linear algebra to study graphs).
+\end{frame}
+
 \begin{frame}{The problem with ER graphs}
     Graphs generated using the ER model have a Poisson degree distribution.
 
