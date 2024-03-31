@@ -54,9 +54,12 @@ if __name__ == "__main__":
             print(f'Sampling for PI {pi:.2f}')
             gcs_samples = []
             for _ in range(n_samples):
-                gcs_samples.append(get_gcs_sample(N, pi))
+                gcs_sample = get_gcs_sample(N, pi)
+                print(gcs_sample)
+                gcs_samples.append(gcs_sample)
             gcs_values_means.append(np.mean(gcs_samples))
-            gcs_values_stds.append(np.std(gcs_samples) / n_samples)
+            gcs_values_stds.append(np.std(gcs_samples) / np.sqrt(n_samples))
+            #print('std', np.std(gcs_samples) / np.sqrt(n_samples))
         gcs_meas[N]['means'] = gcs_values_means
         gcs_meas[N]['stds'] = gcs_values_stds
 
