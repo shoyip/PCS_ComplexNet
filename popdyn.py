@@ -51,38 +51,23 @@ def popdyn_cavity(pi, T, L=10_000, max_iter=100_000):
 
     return population
 
-def popdyn_fields(population, pi, T, max_iter=100_000):
+def popdyn_fields(cavity_population, pi, T):
     # define the degrees
     p1 = 1-pi
     p4 = pi
 
-    L = len(population)
+    L = len(cavity_population)
 
-    # define moment lists
-    moms1, moms2, moms3 = [], [], []
+    fields_population = []
 
-    # iterate until moment convergence is reached
-    for i in range(max_iter):
+    for l in range(L):
         # pick a degree with probabilities q_d+1
         d = np.random.choice([1, 4], p=[p1, p4])
         # choose a number d+1 of cavity fields
-        fields_idx = np.random.randint(0, L, size=d+1)
-        # we will input the last d cavity fields in the cavity function
-        # the we will replace the 0-th cavity field with the output
-        population[fields_idx[0]] = cavfx(population[fields_idx[1:]], T)
+        cavity_fields_idx = np.random.randint(0, L, size=d)
+        fields_population.append(cavfx(cavity_population[cavity_fields_idx], T))
 
-        #moms1.append(mom1(population))
-        #moms2.append(mom2(population))
-        #moms3.append(mom3(population))
-
-#    plt.figure()
-#    plt.plot(moms1, label='order 1')
-#    plt.plot(moms2, label='order 2')
-#    plt.plot(moms3, label='order 3')
-#    plt.legend()
-#    plt.show()
-
-    return population
+    return np.array(fields_population)
 
 def make_pd_histo():
     nT = 5
@@ -99,7 +84,7 @@ def make_pd_histo():
     def get_pd_cavfield(T, pi):
         beta = 1. / T
         cavity_population = popdyn_cavity(pi=pi, T=T, max_iter=max_iter)
-        fields_population = popdyn_fields(cavity_population, pi=pi, T=T, max_iter=max_iter)
+        fields_population = popdyn_fields(cavity_population, pi=pi, T=T)
         return cavity_population, fields_population
 
     figA, axsA = plt.subplots(nT, npi, figsize=(25,20), sharex='all')
@@ -127,10 +112,37 @@ def make_pd_histo():
     figA.savefig('assets/pd_cavity.pdf', bbox_inches='tight')
     figB.savefig('assets/pd_fields.pdf', bbox_inches='tight')
 
-#    np.save('data/pd_mags.npy', pd_mags)
+def make_pd_samples():
+    nT = 10
+    npi = 20
+
+    Ts = np.linspace(0.01, 4., nT)
+    pis = np.linspace(0.01, 1., npi)
+
+    pd_samples = np.zeros((nT, npi))
+
+    def pd_iteration(T, pi):
+        beta = 1. / T
+        max_iter=100_000
+        cavity_population = popdyn_cavity(pi=pi, T=T, max_iter=max_iter)
+        fields_population = popdyn_fields(cavity_population, pi=pi, T=T)
+        mag = np.mean(np.tanh(beta * fields_population))
+        return mag
+
+    for i, T in enumerate(Ts):
+        for j, pi in enumerate(pis):
+            start = time.time()
+            #print(f'Computing mag value for T={T}, pi={pi}...')
+            pd_samples[i, j] = pd_iteration(T, pi)
+            print(f'{i*nT+j}/{nT*npi} TEMP {T:.2f} PI {pi:.2f} MAG {pd_samples[i,j]:.2f}')
+            stop = time.time()
+            print(f'Took {(stop-start)//60:.0f}m{(stop-start)%60:.0f}s')
+
+    np.save('data/pd_mags.npy', pd_samples)
 
 if __name__ == "__main__":
-    make_pd_histo()
+    #make_pd_histo()
+    make_pd_samples()
 #    pi = 0.5
 #    T = 1.2
 #    beta = 1. / T

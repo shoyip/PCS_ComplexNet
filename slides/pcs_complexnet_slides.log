@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  31 MAR 2024 09:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2024.2.1)  31 MAR 2024 19:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1167,7 +1167,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [6
 
 ]
-<../assets//config_model.pdf, id=92, 350.58401pt x 76.03682pt>
+<../assets//config_model.pdf, id=104, 350.58401pt x 76.03682pt>
 File: ../assets//config_model.pdf Graphic file (type pdf)
 <use ../assets//config_model.pdf>
 Package pdftex.def Info: ../assets//config_model.pdf  used on input line 84.
@@ -1181,7 +1181,7 @@ Package pdftex.def Info: ../assets//config_model.pdf  used on input line 84.
 ] [10
 
 ]
-<../assets//rg0.pdf, id=130, 372.9132pt x 281.56392pt>
+<../assets//rg0.pdf, id=142, 372.9132pt x 281.56392pt>
 File: ../assets//rg0.pdf Graphic file (type pdf)
 <use ../assets//rg0.pdf>
 Package pdftex.def Info: ../assets//rg0.pdf  used on input line 136.
@@ -1189,7 +1189,7 @@ Package pdftex.def Info: ../assets//rg0.pdf  used on input line 136.
  [11
 
  <../assets//rg0.pdf>]
-<../assets//rg1.pdf, id=141, 372.9132pt x 281.56392pt>
+<../assets//rg1.pdf, id=153, 372.9132pt x 281.56392pt>
 File: ../assets//rg1.pdf Graphic file (type pdf)
 <use ../assets//rg1.pdf>
 Package pdftex.def Info: ../assets//rg1.pdf  used on input line 145.
@@ -1197,7 +1197,7 @@ Package pdftex.def Info: ../assets//rg1.pdf  used on input line 145.
  [12
 
  <../assets//rg1.pdf>]
-<../assets//rg2.pdf, id=152, 372.9132pt x 281.56392pt>
+<../assets//rg2.pdf, id=165, 372.9132pt x 281.56392pt>
 File: ../assets//rg2.pdf Graphic file (type pdf)
 <use ../assets//rg2.pdf>
 Package pdftex.def Info: ../assets//rg2.pdf  used on input line 154.
@@ -1216,7 +1216,7 @@ Package pdftex.def Info: ../assets//rg2.pdf  used on input line 154.
 ] [18
 
 ]
-<../assets//PTCOP_iterative.pdf, id=204, 289.08pt x 112.42pt>
+<../assets//PTCOP_iterative.pdf, id=216, 289.08pt x 112.42pt>
 File: ../assets//PTCOP_iterative.pdf Graphic file (type pdf)
 <use ../assets//PTCOP_iterative.pdf>
 Package pdftex.def Info: ../assets//PTCOP_iterative.pdf  used on input line 235
@@ -1233,7 +1233,7 @@ Package pdftex.def Info: ../assets//PTCOP_iterative.pdf  used on input line 235
 ] [23
 
 ]
-<../assets//gcs.pdf, id=279, 409.62848pt x 327.20317pt>
+<../assets//gcs.pdf, id=292, 409.62848pt x 327.20317pt>
 File: ../assets//gcs.pdf Graphic file (type pdf)
 <use ../assets//gcs.pdf>
 Package pdftex.def Info: ../assets//gcs.pdf  used on input line 317.
@@ -1270,7 +1270,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ] [32
 
 ]
-<../assets//ode_evol_pi03.pdf, id=414, 410.9616pt x 328.08145pt>
+<../assets//ode_evol_pi03.pdf, id=426, 410.9616pt x 328.08145pt>
 File: ../assets//ode_evol_pi03.pdf Graphic file (type pdf)
 <use ../assets//ode_evol_pi03.pdf>
 Package pdftex.def Info: ../assets//ode_evol_pi03.pdf  used on input line 487.
@@ -1278,7 +1278,7 @@ Package pdftex.def Info: ../assets//ode_evol_pi03.pdf  used on input line 487.
  [33
 
  <../assets//ode_evol_pi03.pdf>]
-<../assets//ode_evol_pi08.pdf, id=467, 410.9616pt x 328.08145pt>
+<../assets//ode_evol_pi08.pdf, id=479, 410.9616pt x 328.08145pt>
 File: ../assets//ode_evol_pi08.pdf Graphic file (type pdf)
 <use ../assets//ode_evol_pi08.pdf>
 Package pdftex.def Info: ../assets//ode_evol_pi08.pdf  used on input line 497.
@@ -1292,7 +1292,7 @@ l.497 \end{frame}
                   [34
 
  <../assets//ode_evol_pi08.pdf>]
-<../assets//qcore.pdf, id=521, 409.62848pt x 327.20317pt>
+<../assets//qcore.pdf, id=533, 409.62848pt x 327.20317pt>
 File: ../assets//qcore.pdf Graphic file (type pdf)
 <use ../assets//qcore.pdf>
 Package pdftex.def Info: ../assets//qcore.pdf  used on input line 507.
@@ -1310,7 +1310,7 @@ Overfull \vbox (2.58463pt too high) detected at line 507
 ] [38
 
 ]
-<../assets//metropolis_acceptance.png, id=604, 576.65437pt x 453.94594pt>
+<../assets//metropolis_acceptance.png, id=616, 576.65437pt x 453.94594pt>
 File: ../assets//metropolis_acceptance.png Graphic file (type png)
 <use ../assets//metropolis_acceptance.png>
 Package pdftex.def Info: ../assets//metropolis_acceptance.png  used on input li
@@ -1321,7 +1321,7 @@ ne 555.
  <../assets//metropolis_acceptance.png (PNG copy)>] [40
 
 ]
-<../assets//wolff.png, id=622, 721.19438pt x 331.2375pt>
+<../assets//wolff.png, id=634, 721.19438pt x 331.2375pt>
 File: ../assets//wolff.png Graphic file (type png)
 <use ../assets//wolff.png>
 Package pdftex.def Info: ../assets//wolff.png  used on input line 591.
@@ -1333,7 +1333,7 @@ Package pdftex.def Info: ../assets//wolff.png  used on input line 591.
 ] [43
 
 ]
-<../assets//wolff_mags.pdf, id=648, 1726.13008pt x 1159.32806pt>
+<../assets//wolff_mags.pdf, id=660, 1726.13008pt x 1159.32806pt>
 File: ../assets//wolff_mags.pdf Graphic file (type pdf)
 <use ../assets//wolff_mags.pdf>
 Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 632.
@@ -1345,117 +1345,105 @@ Package pdftex.def Info: ../assets//wolff_mags.pdf  used on input line 632.
 
 ] [46
 
-]
-<../assets//mcmc_heatmap.pdf, id=693, 930.36021pt x 727.86806pt>
-File: ../assets//mcmc_heatmap.pdf Graphic file (type pdf)
-<use ../assets//mcmc_heatmap.pdf>
-Package pdftex.def Info: ../assets//mcmc_heatmap.pdf  used on input line 654.
-(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
- [47
+] [47
 
- <../assets//mcmc_heatmap.pdf>]
-<../assets//bp_heatmap.pdf, id=735, 930.36021pt x 727.86806pt>
-File: ../assets//bp_heatmap.pdf Graphic file (type pdf)
-<use ../assets//bp_heatmap.pdf>
-Package pdftex.def Info: ../assets//bp_heatmap.pdf  used on input line 663.
-(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
+] [48
 
-[48
-
- <../assets//bp_heatmap.pdf>] [49
+] [49
 
 ] [50
 
+] [51
+
 ]
+<../assets//mcmc_heatmap.pdf, id=743, 930.36021pt x 727.86806pt>
+File: ../assets//mcmc_heatmap.pdf Graphic file (type pdf)
+<use ../assets//mcmc_heatmap.pdf>
+Package pdftex.def Info: ../assets//mcmc_heatmap.pdf  used on input line 723.
+(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
+ [52
 
-LaTeX Warning: Reference `eq:cav_field_distrib' on page 51 undefined on input l
-ine 702.
+ <../assets//mcmc_heatmap.pdf>]
+<../assets//bp_heatmap.pdf, id=785, 930.36021pt x 727.86806pt>
+File: ../assets//bp_heatmap.pdf Graphic file (type pdf)
+<use ../assets//bp_heatmap.pdf>
+Package pdftex.def Info: ../assets//bp_heatmap.pdf  used on input line 732.
+(pdftex.def)             Requested size: 273.83728pt x 214.23053pt.
+ [53
 
-[51
+ <../assets//bp_heatmap.pdf>]
+<../assets//pd_heatmap.pdf, id=827, 448.68063pt x 312.02145pt>
+File: ../assets//pd_heatmap.pdf Graphic file (type pdf)
+<use ../assets//pd_heatmap.pdf>
+Package pdftex.def Info: ../assets//pd_heatmap.pdf  used on input line 741.
+(pdftex.def)             Requested size: 273.83728pt x 190.43755pt.
+ [54
 
-] [52
-
-] [53
-
-] [54
-
-] [55
+ <../assets//pd_heatmap.pdf>] [55
 
 ] [56
 
 ] [57
 
-]
+] [58
 
-LaTeX Warning: Reference `eq:mommatch1' on page 58 undefined on input line 819.
-
-
-
-LaTeX Warning: Reference `eq:mommatch2' on page 58 undefined on input line 819.
-
-
-[58
+] [59
 
 ]
-Overfull \hbox (2.75685pt too wide) detected at line 836
+Overfull \hbox (2.75685pt too wide) detected at line 845
 []\OT1/cmss/m/it/10.95 G[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; \OT1/cms
 s/m/it/10.95 J\OT1/cmss/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 ^^@ [] \OT1/cmss/m/it
 /10.95 J[]m[]m[] \OT1/cmss/m/n/10.95 + [] [][] []
  []
 
-[59
-
-]
-
-LaTeX Warning: Reference `eq:mf_free' on page 60 undefined on input line 853.
-
 [60
 
-]
-<../assets//ppv_1h.pdf, id=877, 409.62848pt x 329.86938pt>
-File: ../assets//ppv_1h.pdf Graphic file (type pdf)
-<use ../assets//ppv_1h.pdf>
-Package pdftex.def Info: ../assets//ppv_1h.pdf  used on input line 863.
-(pdftex.def)             Requested size: 154.03183pt x 124.03795pt.
-<../assets//nmf_jhist_1h.pdf, id=878, 405.47234pt x 329.54002pt>
-File: ../assets//nmf_jhist_1h.pdf Graphic file (type pdf)
-<use ../assets//nmf_jhist_1h.pdf>
-Package pdftex.def Info: ../assets//nmf_jhist_1h.pdf  used on input line 863.
-(pdftex.def)             Requested size: 154.03183pt x 125.18626pt.
- [61
+] [61
 
- <../assets//ppv_1h.pdf> <../assets//nmf_jhist_1h.pdf>]
-<../assets//ppv_1k.pdf, id=973, 409.62848pt x 329.86938pt>
-File: ../assets//ppv_1k.pdf Graphic file (type pdf)
-<use ../assets//ppv_1k.pdf>
-Package pdftex.def Info: ../assets//ppv_1k.pdf  used on input line 873.
-(pdftex.def)             Requested size: 154.03183pt x 124.03795pt.
-<../assets//nmf_jhist_1k.pdf, id=974, 405.47234pt x 329.54002pt>
-File: ../assets//nmf_jhist_1k.pdf Graphic file (type pdf)
-<use ../assets//nmf_jhist_1k.pdf>
-Package pdftex.def Info: ../assets//nmf_jhist_1k.pdf  used on input line 873.
-(pdftex.def)             Requested size: 154.03183pt x 125.18626pt.
+]
+<../assets//ppv_2h.pdf, id=921, 409.62848pt x 329.86938pt>
+File: ../assets//ppv_2h.pdf Graphic file (type pdf)
+<use ../assets//ppv_2h.pdf>
+Package pdftex.def Info: ../assets//ppv_2h.pdf  used on input line 872.
+(pdftex.def)             Requested size: 102.68962pt x 82.69363pt.
+<../assets//nmf_chist_2h.pdf, id=922, 410.85078pt x 329.54002pt>
+File: ../assets//nmf_chist_2h.pdf Graphic file (type pdf)
+<use ../assets//nmf_chist_2h.pdf>
+Package pdftex.def Info: ../assets//nmf_chist_2h.pdf  used on input line 872.
+(pdftex.def)             Requested size: 102.68962pt x 82.36469pt.
+<../assets//nmf_jhist_2h.pdf, id=923, 405.47234pt x 329.54002pt>
+File: ../assets//nmf_jhist_2h.pdf Graphic file (type pdf)
+<use ../assets//nmf_jhist_2h.pdf>
+Package pdftex.def Info: ../assets//nmf_jhist_2h.pdf  used on input line 872.
+(pdftex.def)             Requested size: 102.68962pt x 83.45584pt.
  [62
 
- <../assets//ppv_1k.pdf> <../assets//nmf_jhist_1k.pdf>]
-<../assets//ppv_10k.pdf, id=1070, 409.62848pt x 329.86938pt>
-File: ../assets//ppv_10k.pdf Graphic file (type pdf)
-<use ../assets//ppv_10k.pdf>
-Package pdftex.def Info: ../assets//ppv_10k.pdf  used on input line 883.
-(pdftex.def)             Requested size: 154.03183pt x 124.03795pt.
-<../assets//nmf_jhist_10k.pdf, id=1071, 406.17896pt x 329.54002pt>
-File: ../assets//nmf_jhist_10k.pdf Graphic file (type pdf)
-<use ../assets//nmf_jhist_10k.pdf>
-Package pdftex.def Info: ../assets//nmf_jhist_10k.pdf  used on input line 883.
-(pdftex.def)             Requested size: 154.03183pt x 124.97005pt.
+ <../assets//ppv_2h.pdf> <../assets//nmf_chist_2h.pdf> <../assets//nmf_jhist_2h
+.pdf>]
+<../assets//ppv_1k.pdf, id=1060, 409.62848pt x 329.86938pt>
+File: ../assets//ppv_1k.pdf Graphic file (type pdf)
+<use ../assets//ppv_1k.pdf>
+Package pdftex.def Info: ../assets//ppv_1k.pdf  used on input line 882.
+(pdftex.def)             Requested size: 102.68962pt x 82.69363pt.
+<../assets//nmf_chist_1k.pdf, id=1061, 413.29608pt x 329.54002pt>
+File: ../assets//nmf_chist_1k.pdf Graphic file (type pdf)
+<use ../assets//nmf_chist_1k.pdf>
+Package pdftex.def Info: ../assets//nmf_chist_1k.pdf  used on input line 882.
+(pdftex.def)             Requested size: 102.68962pt x 81.87692pt.
+<../assets//nmf_jhist_1k.pdf, id=1062, 405.47234pt x 329.54002pt>
+File: ../assets//nmf_jhist_1k.pdf Graphic file (type pdf)
+<use ../assets//nmf_jhist_1k.pdf>
+Package pdftex.def Info: ../assets//nmf_jhist_1k.pdf  used on input line 882.
+(pdftex.def)             Requested size: 102.68962pt x 83.45584pt.
  [63
 
- <../assets//ppv_10k.pdf> <../assets//nmf_jhist_10k.pdf>] [64
+ <../assets//ppv_1k.pdf> <../assets//nmf_chist_1k.pdf> <../assets//nmf_jhist_1k
+.pdf>] [64
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 892.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 891.
 
 [65
 
@@ -1474,31 +1462,19 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 
  (./pcs_complexnet_slides.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `pcs_complexnet_slides.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pcs_complexnet_slides.out':
-(rerunfilecheck)             Before: 94F8BF65639B5AFD9A9DFDBE6A3ACD4E;748
-(rerunfilecheck)             After:  E15E7D4606BA375B15E887586FDBD5A5;1068.
-
-Package biblatex Warning: Please rerun LaTeX.
-
+Package rerunfilecheck Info: File `pcs_complexnet_slides.out' has not changed.
+(rerunfilecheck)             Checksum: E15E7D4606BA375B15E887586FDBD5A5;1068.
 Package logreq Info: Writing requests to 'pcs_complexnet_slides.run.xml'.
 \openout1 = `pcs_complexnet_slides.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30901 strings out of 477985
- 598448 string characters out of 5840059
+ 30911 strings out of 477985
+ 598775 string characters out of 5840059
  1867388 words of memory out of 5000000
- 50390 multiletter control sequences out of 15000+600000
+ 50400 multiletter control sequences out of 15000+600000
  526140 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,18n,104p,2265b,1595s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1522,10 +1498,10 @@ ublic/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pcs_complexnet_slides.pdf (66 pages, 736973 bytes).
+Output written on pcs_complexnet_slides.pdf (66 pages, 750145 bytes).
 PDF statistics:
- 1318 PDF objects out of 1440 (max. 8388607)
- 739 compressed objects within 8 object streams
+ 1347 PDF objects out of 1440 (max. 8388607)
+ 756 compressed objects within 8 object streams
  178 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
