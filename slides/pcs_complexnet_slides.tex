@@ -159,9 +159,65 @@
 \end{frame}
 
 \begin{frame}{Detecting the giant component in an instance}
+    We explore the connected components with a \alert{Breadth-First Search}
+    (BFS) algorithm \ref{algo:bfs}.
+
+    Once all connected components have been detected, they are stored in a
+    dictionary-like object and the size of the biggest is given as an output.
+\end{frame}
+
+\begin{frame}{BFS algorithm}
+    \begin{algorithm}[H]
+        \begin{algorithmic}[1]
+            \STATE All nodes are unvisited
+            \WHILE{Set of unvisited nodes is nonempty}
+                \STATE Initialize queue with unvisited node
+                \WHILE{Queue is nonempty}
+                    \STATE Assign last node of queue to component $t$
+                    and remove from the queue
+                    \FOR{All neighbours of the node}
+                        \IF{The neighbour doesn't belong to component $t$}
+                            \STATE Add to component $t$
+                            \STATE Add to queue
+                        \ENDIF
+                    \ENDFOR
+                \ENDWHILE
+            \ENDWHILE
+        \end{algorithmic}
+        \caption{Breadth-First Search algorithm implementation}
+        \label{algo:bfs}
+    \end{algorithm}
 \end{frame}
 
 \begin{frame}{The onset of criticality}
+    On an intuitive ground, we can argue that in an ER graph the number of nodes
+    visited after a $k$ steps walk is on average given by $c^k=e^{k\log{c}}$.
+    Then for $c<1$ the number gets smaller and smaller while for $c>1$ it
+    becomes extensive.
+
+    On the same line of reasoning, we can replace $c$ with the average number of
+    nearest neighbours which is given by the average excess degree, hence we get
+    that the onset of criticality happens for
+    \begin{equation}
+        \frac{\expval{d^2} - \expval{d}}{\expval{d}} \reqeq 1
+        \label{eq:onset_condition}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{The onset of criticality}
+    Then
+    $$
+    \expval{d^2} - 2\expval{d} \reqeq 0
+    $$
+    which in our case is given by
+    $$
+    (1-\pi) + 16 \pi - 2 [(1-\pi) + 4 \pi] \reqeq 0
+    $$
+
+    The final result is that the criticality threshold is given by
+    \begin{equation}
+        \pi = \frac{1}{9}
+    \end{equation}
 \end{frame}
 
 \begin{frame}{Size of the giant component}
@@ -586,6 +642,24 @@
 \begin{frame}{Approximate Belief Propagation}
     The BP equations can also be applied to the case of graphs that have loops.
     In that case they are approximate equations, and
+\end{frame}
+
+\begin{frame}[plain]
+    \begin{figure}
+        \centering
+        \includegraphics[width=.8\textwidth]{mcmc_heatmap}
+        \caption{Heatmap for MCMC sampled magnetization means and stds}
+        \label{fig:mcmc_heatmap}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \begin{figure}
+        \centering
+        \includegraphics[width=.8\textwidth]{bp_heatmap}
+        \caption{Heatmap for BP sampled magnetization means and stds}
+        \label{fig:bp_heatmap}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Population dynamics}

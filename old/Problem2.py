@@ -22,53 +22,58 @@ import time
 from compnet.graphs import ConfigModelDegreeGraph
 import numpy as np
 import matplotlib.pyplot as plt
+from joblib import Parallel, delayed
 
 start = time.time()
 
 # PART A: GENERATE INSTANCES AND MEASURE THE GIANT COMPONENT
 
 n_samples = 20
+N_values = [100]
 
 # we pick equally spaced values of pi from 0.01 to 0.99
-pi_values = np.linspace(0.01, 0.99, 25)
+pi_values = np.linspace(0.01, 0.99, 5)
 
-# we define the lists of means and standard deviations of giant component sizes
-gcs_means, gcs_stds = [], []
+# we define the dictionary of measurements
+gcs_meas = {}
+#gcs_means, gcs_stds = [], []
 
-# we iterate over values of the pi parameter
-for pi in pi_values:
-    print(f'Generating data for instances with pi={pi}')
-
-    # we define the number of vertices of a graph
-    N = 1_000
-
+def generate_sample(N, pi):
     # we define the degree distribution
     degree_dict = {1: 1-pi, 4: pi}
-
+    
     # we generate a ConfigModelDegreeGraph object instance
     G = ConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
 
-    # initialize the list of giant component sizes for random instances given pi
+    # generate a graph instance and get the neighbourhoods
+    G.generate_graph()
+    G.find_neighbourhoods()
+    
+    # get the giant component size
+    gcs_sample = G.get_giantcomponentsize() * 1. / N
+    
+    return gcs_sample
+
+# we iterate over values of the pi parameter
+for N in N_values:
+    gcs_meas[N] = {'gcs_means': [], 'gcs_stds': []}
     gcs_samples = []
+    for pi in pi_values:
+        print(f'Generating data for instances with N={N} and pi={pi}')
+    
+        # initialize the list of giant component sizes for random instances given pi
+        #gcs_samples = Parallel(n_jobs=4)(delayed(generate_sample)(N, pi) for _ in range(n_samples))
 
-    # for each value of pi, we sample 20 instances
-    for inst in range(n_samples):
-
-        # generate a graph instance and get the neighbourhoods
-        G.generate_graph()
-        G.find_neighbourhoods()
-
-        # get the giant component size
-        gcs_sample = G.get_giantcomponentsize() * 1. / N
-
-        # append the value to the list of giant component sizes for a given pi
-        gcs_samples.append(gcs_sample)
-
-    # compute the mean of the giant component sizes
-    gcs_means.append(np.mean(gcs_samples))
-
-    # compute the standard deviation of the giant component sizes
-    gcs_stds.append(np.std(gcs_samples) / np.sqrt(n_samples))
+        for _ in range(n_samples):
+            gcs_sample = generate_sample(N, pi)
+            print(f'N {N} PI {pi} GCS {gcs_sample}')
+            gcs_samples.append(gcs_sample)
+    
+        # compute the mean of the giant component sizes
+        gcs_meas[N]['gcs_means'].append(np.mean(gcs_samples))
+    
+        # compute the standard deviation of the giant component sizes
+        gcs_meas[N]['gcs_stds'].append(np.std(gcs_samples) / np.sqrt(n_samples))
 
 # PART B: GENERATING THE PLOT FOR THE ANALYTICAL COMPUTATION OF THE
 # GIANT COMPONENT SIZE
@@ -106,8 +111,9 @@ analytic_gamma = np.vectorize(gamma_func)(analytic_pi)
 
 # generate the figure
 fig = plt.figure()
-plt.errorbar(pi_values, gcs_means, yerr=gcs_stds, fmt='.',
-    label='GCS for $N=1000$ instances')
+for N in N_values:
+    plt.errorbar(pi_values, gcs_meas[N]['gcs_means'], yerr=gcs_meas[N]['gcs_stds'], fmt='.',
+        label=f'GCS for $N={N}$ instances')
 plt.plot(analytic_pi, analytic_gamma, label=r'$\gamma$ function')
 plt.grid()
 plt.legend()

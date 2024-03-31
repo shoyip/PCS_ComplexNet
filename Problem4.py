@@ -51,62 +51,11 @@ def measure_autocorr():
     
     fig.savefig('assets/wolff_mags.pdf', bbox_inches='tight')
 
-#def make_mcmc_heatmap():
-#    mcmc_sweeps = 500
-#    eq_sweeps = 100
-#    sample_sweeps = 20
-#
-#    Ts = np.linspace(0.01, 4., 7)
-#    pis = np.linspace(0.01, 1., 15)
-#
-#    heatmap_matrix_means = np.zeros((7, 15))
-#    heatmap_matrix_stds = np.zeros((7, 15))
-#
-#    for i in range(7):
-#        for j in range(15):
-#            start = time.time()
-#            T = Ts[i]
-#            pi = pis[j]
-#            print(f'Computing mag value for T={T}, pi={pi}...')
-#            sweep_mags = []
-#            for iteration in range(1):
-#                degree_dict = {1: 1-pi, 4: pi}
-#                G = IsingConfigModelDegreeGraph(N=N, degree_dict=degree_dict)
-#                G.generate_graph()
-#                G.find_neighbourhoods()
-#                G.generate_spins()
-#                G.find_spin_neighbourhoods()
-#                sweep_mag = np.abs(
-#                        G.mcmc_wolff(
-#                            T=T,
-#                            mcmc_sweeps=mcmc_sweeps,
-#                            return_all=False,
-#                            eq_sweeps=eq_sweeps,
-#                            sample_sweeps=sample_sweeps))
-#                sweep_mags.append(sweep_mag)
-#            heatmap_matrix_means[i][j] = np.mean(sweep_mags)
-#            heatmap_matrix_stds[i][j] = np.std(sweep_mags) / np.sqrt(20)
-#            stop = time.time()
-#            print(f'Took {(stop-start)//60:.0f}m{(stop-start)%60:.0f}s')
-#
-#    fig, ax = plt.subplots()
-#    im = plt.imshow(heatmap_matrix_means, cmap='hot')
-#    plt.xticks(Ts)
-#    plt.yticks(pis)
-#    plt.xlabel(r'$T$')
-#    plt.ylabel(r'$\pi$')
-#    divider = make_axes_locatable(ax)
-#    cax = divider.append_axes("right", size="5%", pad=0.05)
-#    plt.colorbar(im, cax=cax)
-#    plt.title('Heatmap for MCMC magnetization values')
-#    plt.close()
-#    fig.savefig('assets/mcmc_heatmap.pdf', bbox_inches='tight')
-
 def make_mcmc_samples():
     nT = 10
     npi = 20
 
-    M = 1
+    M = 50
     N = 100
 
     Ts = np.linspace(0.01, 4., nT)
@@ -140,7 +89,7 @@ def make_mcmc_samples():
             stop = time.time()
             print(f'Took {(stop-start)//60:.0f}m{(stop-start)%60:.0f}s')
 
-    np.save('data/prova_mcmc_mags.npy', mcmc_samples)
+    np.save('data/mcmc_mags.npy', mcmc_samples)
 
 def make_bp_samples():
     nT = 10
@@ -176,19 +125,34 @@ def make_bp_samples():
 
     np.save('data/bp_mags.npy', bp_samples)
 
-#    fig, ax = plt.subplots()
-#    plt.pcolormesh(pis, Ts, np.abs(heatmap_matrix_means), shading='nearest')
-##    plt.imshow(heatmap_matrix_means, origin='lower')
-#    plt.xlabel(r'$\pi$')
-#    plt.ylabel(r'$T$')
-##    plt.xlim([0, 1])
-##    plt.ylim([0, 4])
-#    plt.colorbar(label=r'$|\vec m|$')
-#    plt.title('Heatmap for BP magnetization values')
-#    plt.close()
-#    fig.savefig('assets/bp_heatmap.pdf', bbox_inches='tight')
+def plot_heatmap(sample_file, outfile, name):
+    nT = 10
+    npi = 20
+    mag_samples = np.load(sample_file)
+    Ts = np.linspace(0.01, 4., nT)
+    pis = np.linspace(0.01, 1., npi)
+    mag_means = np.mean(np.abs(mag_samples), axis=2)
+    mag_stds = np.std(np.abs(mag_samples), axis=2)
+    fig, axs = plt.subplots(2, 1, figsize=(15, 12))
+    im = axs[0].pcolormesh(pis, Ts, mag_means, shading='nearest')
+    axs[1].pcolormesh(pis, Ts, mag_stds, shading='nearest')
+    axs[0].title.set_text(f'{name} means')
+    axs[1].title.set_text(f'{name} stds')
+    axs[0].set_xlabel(r'$\pi$')
+    axs[0].set_ylabel(r'$T$')
+    axs[1].set_xlabel(r'$\pi$')
+    axs[1].set_ylabel(r'$T$')
+    fig.subplots_adjust(right=0.8)
+    cax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
+    fig.colorbar(im, label=r'$|\vec m|$', cax=cax)
+#    plt.title(f'Heatmap for {name}')
+#    plt.show()
+    plt.close()
+    fig.savefig(outfile, bbox_inches='tight')
 
 if __name__ == "__main__":
     # measure_autocorr()
-    make_mcmc_samples()
-    #make_bp_samples()
+    # make_mcmc_samples()
+    # make_bp_samples()
+    plot_heatmap('data/mcmc_mags.npy', 'assets/mcmc_heatmap.pdf', 'MCMC')
+    plot_heatmap('data/bp_mags.npy', 'assets/bp_heatmap.pdf', 'BP')
